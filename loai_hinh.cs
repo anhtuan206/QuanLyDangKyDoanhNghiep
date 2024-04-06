@@ -21,7 +21,7 @@ namespace QuanLyDangKyDoanhNghiep
         }
     
         public int id { get; set; }
-        public string loai_hinh1 { get; set; }
+        public string ten_loai_hinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<doanh_nghiep> doanh_nghiep { get; set; }

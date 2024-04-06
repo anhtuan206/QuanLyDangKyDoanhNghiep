@@ -75,7 +75,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(844, 696);
+            this.panel1.Size = new System.Drawing.Size(761, 261);
             this.panel1.TabIndex = 3;
             // 
             // panMainFormBody
@@ -83,7 +83,7 @@
             this.panMainFormBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMainFormBody.Location = new System.Drawing.Point(251, 0);
             this.panMainFormBody.Name = "panMainFormBody";
-            this.panMainFormBody.Size = new System.Drawing.Size(593, 696);
+            this.panMainFormBody.Size = new System.Drawing.Size(510, 261);
             this.panMainFormBody.TabIndex = 4;
             // 
             // panel2
@@ -94,7 +94,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 696);
+            this.panel2.Size = new System.Drawing.Size(251, 261);
             this.panel2.TabIndex = 3;
             // 
             // frm_dangnhap
@@ -102,7 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(844, 696);
+            this.ClientSize = new System.Drawing.Size(761, 261);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(777, 259);
             this.Name = "frm_dangnhap";

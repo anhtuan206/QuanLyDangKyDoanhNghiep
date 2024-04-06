@@ -166,46 +166,76 @@
     <Compile Include="external_account.cs">
       <DependentUpon>Model_QLDKDN.tt</DependentUpon>
     </Compile>
-    <Compile Include="frm_dangnhap.cs">
+    <Compile Include="Dang Nhap\frm_dangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_dangnhap.Designer.cs">
+    <Compile Include="Dang Nhap\frm_dangnhap.Designer.cs">
       <DependentUpon>frm_dangnhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_dangkytaikhoandoanhnghiep.cs">
+    <Compile Include="Dang Ky Tai Khoan\frm_dangkytaikhoandoanhnghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_dangkytaikhoandoanhnghiep.Designer.cs">
+    <Compile Include="Dang Ky Tai Khoan\frm_dangkytaikhoandoanhnghiep.Designer.cs">
       <DependentUpon>frm_dangkytaikhoandoanhnghiep.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_dangnhap_taikhoan_doanhnghiep.cs">
+    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_doanhnghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_dangnhap_taikhoan_doanhnghiep.Designer.cs">
+    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_doanhnghiep.Designer.cs">
       <DependentUpon>frm_dangnhap_taikhoan_doanhnghiep.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_dangnhap_taikhoan_quantri.cs">
+    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_quantri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_dangnhap_taikhoan_quantri.Designer.cs">
+    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_quantri.Designer.cs">
       <DependentUpon>frm_dangnhap_taikhoan_quantri.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_giaodien_quantri.cs">
+    <Compile Include="Doanh Nghiep\frm_giaodien_doanhnghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_giaodien_quantri.Designer.cs">
+    <Compile Include="Doanh Nghiep\frm_giaodien_doanhnghiep.Designer.cs">
+      <DependentUpon>frm_giaodien_doanhnghiep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_dantoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_dantoc.Designer.cs">
+      <DependentUpon>frm_quanly_dantoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_loaihinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_loaihinh.Designer.cs">
+      <DependentUpon>frm_quanly_loaihinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nganhnghe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nganhnghe.Designer.cs">
+      <DependentUpon>frm_quanly_nganhnghe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_quoctich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_quoctich.Designer.cs">
+      <DependentUpon>frm_quanly_quoctich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\frm_giaodien_quantri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\frm_giaodien_quantri.Designer.cs">
       <DependentUpon>frm_giaodien_quantri.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_quanlydanhmuc.cs">
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_danhmuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_quanlydanhmuc.Designer.cs">
-      <DependentUpon>frm_quanlydanhmuc.cs</DependentUpon>
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_danhmuc.Designer.cs">
+      <DependentUpon>frm_quanly_danhmuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_quanly_nhanvien.cs">
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_quanly_nhanvien.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nhanvien.Designer.cs">
       <DependentUpon>frm_quanly_nhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_quanly_taikhoan_doanhnghiep.cs">
@@ -214,10 +244,10 @@
     <Compile Include="frm_quanly_taikhoan_doanhnghiep.Designer.cs">
       <DependentUpon>frm_quanly_taikhoan_doanhnghiep.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_quanly_taikhoan_noibo.cs">
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_taikhoan_noibo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_quanly_taikhoan_noibo.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_taikhoan_noibo.Designer.cs">
       <DependentUpon>frm_quanly_taikhoan_noibo.cs</DependentUpon>
     </Compile>
     <Compile Include="internal_account.cs">
@@ -252,31 +282,46 @@
     <Compile Include="quoc_tich.cs">
       <DependentUpon>Model_QLDKDN.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frm_dangnhap.resx">
+    <EmbeddedResource Include="Dang Nhap\frm_dangnhap.resx">
       <DependentUpon>frm_dangnhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_dangkytaikhoandoanhnghiep.resx">
+    <EmbeddedResource Include="Dang Ky Tai Khoan\frm_dangkytaikhoandoanhnghiep.resx">
       <DependentUpon>frm_dangkytaikhoandoanhnghiep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_dangnhap_taikhoan_doanhnghiep.resx">
+    <EmbeddedResource Include="Dang Nhap\frm_dangnhap_taikhoan_doanhnghiep.resx">
       <DependentUpon>frm_dangnhap_taikhoan_doanhnghiep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_dangnhap_taikhoan_quantri.resx">
+    <EmbeddedResource Include="Dang Nhap\frm_dangnhap_taikhoan_quantri.resx">
       <DependentUpon>frm_dangnhap_taikhoan_quantri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_giaodien_quantri.resx">
+    <EmbeddedResource Include="Doanh Nghiep\frm_giaodien_doanhnghiep.resx">
+      <DependentUpon>frm_giaodien_doanhnghiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_dantoc.resx">
+      <DependentUpon>frm_quanly_dantoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_loaihinh.resx">
+      <DependentUpon>frm_quanly_loaihinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nganhnghe.resx">
+      <DependentUpon>frm_quanly_nganhnghe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_quoctich.resx">
+      <DependentUpon>frm_quanly_quoctich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quan Ly Noi Bo\frm_giaodien_quantri.resx">
       <DependentUpon>frm_giaodien_quantri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_quanlydanhmuc.resx">
-      <DependentUpon>frm_quanlydanhmuc.cs</DependentUpon>
+    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_danhmuc.resx">
+      <DependentUpon>frm_quanly_danhmuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_quanly_nhanvien.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nhanvien.resx">
       <DependentUpon>frm_quanly_nhanvien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_quanly_taikhoan_doanhnghiep.resx">
       <DependentUpon>frm_quanly_taikhoan_doanhnghiep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_quanly_taikhoan_noibo.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_taikhoan_noibo.resx">
       <DependentUpon>frm_quanly_taikhoan_noibo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -318,12 +363,14 @@
       <DependentUpon>Model_QLDKDN.edmx</DependentUpon>
       <LastGenOutput>Model_QLDKDN.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Model_QLDKDN.edmx.sql" />
     <Content Include="Model_QLDKDN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model_QLDKDN.edmx</DependentUpon>
       <LastGenOutput>Model_QLDKDN.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

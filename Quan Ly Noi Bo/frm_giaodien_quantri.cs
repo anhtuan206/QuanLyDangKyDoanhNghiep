@@ -20,7 +20,7 @@ namespace QuanLyDangKyDoanhNghiep
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form quanly_danhmuc = new frm_quanlydanhmuc(this);
+            Form quanly_danhmuc = new frm_quanly_danhmuc(this);
             quanly_danhmuc.Show();
         }
 

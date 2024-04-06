@@ -13,9 +13,9 @@ namespace QuanLyDangKyDoanhNghiep
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class qldkdn_entity : DbContext
+    public partial class tuanpa2_QuanLyDangKyDoanhNghiepEntities : DbContext
     {
-        public qldkdn_entity()
+        public tuanpa2_QuanLyDangKyDoanhNghiepEntities()
             : base("name=tuanpa2_QuanLyDangKyDoanhNghiepEntities")
         {
         }

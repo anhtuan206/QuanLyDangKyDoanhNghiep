@@ -37,21 +37,29 @@ namespace QuanLyDangKyDoanhNghiep
 
         private void btn_dangnhaptaikhoanquantri_Click(object sender, EventArgs e)
         {
+            this.Width = 777;
+            this.Height = 300;
             OpenChildForm(new frm_dangnhap_taikhoan_quantri(this));
         }
 
         private void frm_dangnhap_Load(object sender, EventArgs e)
         {
+            this.Width = 777;
+            this.Height = 300;
             OpenChildForm(new frm_dangnhap_taikhoan_quantri(this));
         }
 
         private void btn_dangnhaptaikhoandoanhnghiep_Click(object sender, EventArgs e)
         {
+            this.Width = 777;
+            this.Height = 300;
             OpenChildForm(new frm_dangnhap_taikhoan_doanhnghiep(this));
         }
 
         private void btn_dangkytaikhoandoanhnghiep_Click(object sender, EventArgs e)
         {
+            this.Width = 900;
+            this.Height = 800;
             OpenChildForm(new frm_dangkytaikhoandoanhnghiep(this));
         }
     }

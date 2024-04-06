@@ -14,7 +14,7 @@ namespace QuanLyDangKyDoanhNghiep
     public partial class frm_quanly_nhanvien : Form
     {
         public nhan_vien nhan_Vien = new nhan_vien();
-        int nhanvien_id_selected = 0;
+        //int nhanvien_id_selected = 0;
 
         public frm_quanly_nhanvien()
         {
@@ -33,6 +33,20 @@ namespace QuanLyDangKyDoanhNghiep
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Bạn muốn xóa nhân viên đã chọn?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                using (tuanpa2_QuanLyDangKyDoanhNghiepEntities db = new tuanpa2_QuanLyDangKyDoanhNghiepEntities())
+                {
+                    var entry = db.Entry(nhan_Vien);
+                    if (entry.State == System.Data.Entity.EntityState.Detached)
+                    {
+                        db.nhan_vien.Attach(nhan_Vien);
+                        db.nhan_vien.Remove(nhan_Vien);
+                        db.SaveChanges();
+                        clear_Form();
+                    }
+                }
+            }
             clear_Form();
         }
 
@@ -43,10 +57,10 @@ namespace QuanLyDangKyDoanhNghiep
         void clear_Form() {
             txt_hoten.Text = txt_cccd.Text = txt_noicap.Text = string.Empty;
             pck_ngaycap.Text = pck_ngaysinh.Text = string.Empty;
-            rdo_nam.Checked = rdo_nu.Checked = false;
+            rdo_nam.Checked = true;
             btn_createsave.Text = "Tạo nhân viên";
             btn_delete.Enabled = false;
-            nhanvien_id_selected = 0;
+            nhan_Vien.id = 0;
             grid_nhanvien_ds();
         }
 
@@ -104,6 +118,13 @@ namespace QuanLyDangKyDoanhNghiep
                 return validate;
             }
 
+            if (pck_ngaycap.Value<=pck_ngaysinh.Value)
+            {
+                validate = false;
+                MessageBox.Show("Ngày cấp CCCD không hợp lệ");
+                return validate;
+            }
+
             if (txt_noicap.Text.Trim().Length <= 0)
             {
                 validate = false;
@@ -131,27 +152,67 @@ namespace QuanLyDangKyDoanhNghiep
                 nhan_Vien.so_cccd = txt_cccd.Text.Trim();
                 nhan_Vien.ngay_cap = pck_ngaycap.Value;
                 nhan_Vien.noi_cap = txt_noicap.Text.Trim();
-                using (qldkdn_entity db = new qldkdn_entity())
+                using (tuanpa2_QuanLyDangKyDoanhNghiepEntities db = new tuanpa2_QuanLyDangKyDoanhNghiepEntities())
                 {
-                    db.nhan_vien.Add(nhan_Vien);
+                    if (nhan_Vien.id == 0)
+                    {
+                        db.nhan_vien.Add(nhan_Vien);
+
+                    }
+                    else
+                    {
+                        db.Entry(nhan_Vien).State = System.Data.Entity.EntityState.Modified;
+                    }
                     db.SaveChanges();
-                    MessageBox.Show("Tạo nhân viên thành công!");
-                    clear_Form();
                 }
+                MessageBox.Show("Lưu nhân viên thành công!");
+                clear_Form();
             }
         }
 
         void grid_nhanvien_ds()
         {
-            using (qldkdn_entity db = new qldkdn_entity())
+            using (tuanpa2_QuanLyDangKyDoanhNghiepEntities db = new tuanpa2_QuanLyDangKyDoanhNghiepEntities())
             {
+                List<nhan_vien> nhan_vien_list = db.nhan_vien.ToList<nhan_vien>();
+                /*foreach (nhan_vien item in nhan_vien_list)
+                {
+                    grid_nhanvien.da
+                }*/
+                grid_nhanvien.AutoGenerateColumns = false;
                 grid_nhanvien.DataSource = db.nhan_vien.ToList<nhan_vien>();
+                grid_nhanvien.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells) ;
             }
         }
 
         private void frm_quanly_nhanvien_Load(object sender, EventArgs e)
         {
             clear_Form() ;
+        }
+
+        private void grid_nhanvien_DoubleClick(object sender, EventArgs e)
+        {
+            if (grid_nhanvien.CurrentRow.Index != -1)
+            {
+                nhan_Vien.id = Convert.ToInt32(grid_nhanvien.CurrentRow.Cells["id"].Value);
+                using (tuanpa2_QuanLyDangKyDoanhNghiepEntities db = new tuanpa2_QuanLyDangKyDoanhNghiepEntities())
+                {
+                    nhan_Vien = db.nhan_vien.Where(x => x.id == nhan_Vien.id).FirstOrDefault();
+                    txt_hoten.Text = nhan_Vien.ho_ten;
+                    if (nhan_Vien.gioi_tinh)
+                    {    rdo_nam.Checked = true;
+                        rdo_nu.Checked = false;
+                    }
+                    else
+                    { rdo_nam.Checked = false; rdo_nu.Checked = true;}
+                    pck_ngaysinh.Value = nhan_Vien.ngay_sinh;
+                    txt_cccd.Text = nhan_Vien.so_cccd;
+                    pck_ngaycap.Value = nhan_Vien.ngay_cap;
+                    txt_noicap.Text = nhan_Vien.noi_cap;
+                }
+                btn_createsave.Text = "Lưu thay đổi";
+                btn_delete.Enabled = true;
+            }
         }
     }
 }

@@ -46,10 +46,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grid_internal_account = new System.Windows.Forms.DataGridView();
-            this.nhan_vien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isLocked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.created_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.create_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_locked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id_nhan_vien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ho_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngay_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.so_cccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,7 +78,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 41);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(458, 520);
+            this.panel3.Size = new System.Drawing.Size(427, 720);
             this.panel3.TabIndex = 5;
             // 
             // cbb_nhanvien
@@ -214,9 +218,9 @@
             // 
             this.panel2.Controls.Add(this.grid_internal_account);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(458, 41);
+            this.panel2.Location = new System.Drawing.Point(427, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(726, 520);
+            this.panel2.Size = new System.Drawing.Size(757, 720);
             this.panel2.TabIndex = 6;
             // 
             // grid_internal_account
@@ -224,23 +228,29 @@
             this.grid_internal_account.AllowUserToOrderColumns = true;
             this.grid_internal_account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_internal_account.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nhan_vien,
+            this.id,
             this.username,
-            this.isLocked,
-            this.created_time});
+            this.create_time,
+            this.is_locked,
+            this.id_nhan_vien,
+            this.ho_ten,
+            this.ngay_sinh,
+            this.so_cccd});
             this.grid_internal_account.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_internal_account.Location = new System.Drawing.Point(0, 0);
             this.grid_internal_account.Name = "grid_internal_account";
-            this.grid_internal_account.Size = new System.Drawing.Size(726, 520);
+            this.grid_internal_account.Size = new System.Drawing.Size(757, 720);
             this.grid_internal_account.TabIndex = 0;
             this.grid_internal_account.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_taikhoan_noibo_CellContentClick);
+            this.grid_internal_account.DoubleClick += new System.EventHandler(this.grid_internal_account_DoubleClick);
             // 
-            // nhan_vien
+            // id
             // 
-            this.nhan_vien.DataPropertyName = "id_nhan_vien";
-            this.nhan_vien.HeaderText = "Nhân viên";
-            this.nhan_vien.Name = "nhan_vien";
-            this.nhan_vien.ReadOnly = true;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // username
             // 
@@ -249,25 +259,54 @@
             this.username.Name = "username";
             this.username.ReadOnly = true;
             // 
-            // isLocked
+            // create_time
             // 
-            this.isLocked.DataPropertyName = "is_locked";
-            this.isLocked.HeaderText = "Bị khóa";
-            this.isLocked.Name = "isLocked";
-            this.isLocked.ReadOnly = true;
+            this.create_time.DataPropertyName = "create_time";
+            this.create_time.HeaderText = "Thời gian tạo";
+            this.create_time.Name = "create_time";
+            this.create_time.ReadOnly = true;
             // 
-            // created_time
+            // is_locked
             // 
-            this.created_time.DataPropertyName = "create_time";
-            this.created_time.HeaderText = "Thời gian tạo";
-            this.created_time.Name = "created_time";
-            this.created_time.ReadOnly = true;
+            this.is_locked.DataPropertyName = "is_locked";
+            this.is_locked.HeaderText = "Bị khóa";
+            this.is_locked.Name = "is_locked";
+            this.is_locked.ReadOnly = true;
+            // 
+            // id_nhan_vien
+            // 
+            this.id_nhan_vien.DataPropertyName = "id_nhan_vien";
+            this.id_nhan_vien.HeaderText = "id_nhan_vien";
+            this.id_nhan_vien.Name = "id_nhan_vien";
+            this.id_nhan_vien.ReadOnly = true;
+            this.id_nhan_vien.Visible = false;
+            // 
+            // ho_ten
+            // 
+            this.ho_ten.DataPropertyName = "ho_ten";
+            this.ho_ten.HeaderText = "Nhân viên";
+            this.ho_ten.Name = "ho_ten";
+            this.ho_ten.ReadOnly = true;
+            // 
+            // ngay_sinh
+            // 
+            this.ngay_sinh.DataPropertyName = "ngay_sinh";
+            this.ngay_sinh.HeaderText = "Ngày sinh";
+            this.ngay_sinh.Name = "ngay_sinh";
+            this.ngay_sinh.ReadOnly = true;
+            // 
+            // so_cccd
+            // 
+            this.so_cccd.DataPropertyName = "so_cccd";
+            this.so_cccd.HeaderText = "Số CCCD";
+            this.so_cccd.Name = "so_cccd";
+            this.so_cccd.ReadOnly = true;
             // 
             // frm_quanly_taikhoan_noibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -304,9 +343,16 @@
         private System.Windows.Forms.ComboBox cbb_nhanvien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView grid_internal_account;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nhan_vien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isLocked;
         private System.Windows.Forms.DataGridViewTextBoxColumn created_time;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isLocked;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nhan_vien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_nhan_vien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn create_time;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn is_locked;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ho_ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngay_sinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn so_cccd;
     }
 }

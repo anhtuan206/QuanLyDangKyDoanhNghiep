@@ -26,8 +26,8 @@ namespace QuanLyDangKyDoanhNghiep
         public string ho_ten { get; set; }
         public Nullable<short> gioi_tinh { get; set; }
         public System.DateTime ngay_sinh { get; set; }
-        public Nullable<int> quoc_tich_id { get; set; }
-        public Nullable<int> dan_toc_id { get; set; }
+        public Nullable<int> id_quoc_tich { get; set; }
+        public Nullable<int> id_dan_toc { get; set; }
         public string so_dien_thoai { get; set; }
         public string so_fax { get; set; }
         public string web_site { get; set; }

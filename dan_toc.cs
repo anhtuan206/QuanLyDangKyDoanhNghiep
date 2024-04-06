@@ -21,8 +21,8 @@ namespace QuanLyDangKyDoanhNghiep
         }
     
         public int id { get; set; }
-        public string dan_toc1 { get; set; }
-        public int quoc_tich_id { get; set; }
+        public string ten_dan_toc { get; set; }
+        public int id_quoc_tich { get; set; }
     
         public virtual quoc_tich quoc_tich { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

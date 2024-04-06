@@ -22,7 +22,7 @@ namespace QuanLyDangKyDoanhNghiep
         }
     
         public int id { get; set; }
-        public string quoc_tich1 { get; set; }
+        public string ten_quoc_tich { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dan_toc> dan_toc { get; set; }

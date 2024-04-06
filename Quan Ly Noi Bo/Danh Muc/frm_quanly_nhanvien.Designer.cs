@@ -49,13 +49,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grid_nhanvien = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ho_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioi_tinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngay_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.so_cccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngay_cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noi_cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -261,18 +261,27 @@
             // 
             this.grid_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_nhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.ho_ten,
             this.gioi_tinh,
             this.ngay_sinh,
             this.so_cccd,
             this.ngay_cap,
-            this.noi_cap,
-            this.id});
+            this.noi_cap});
             this.grid_nhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_nhanvien.Location = new System.Drawing.Point(0, 0);
             this.grid_nhanvien.Name = "grid_nhanvien";
             this.grid_nhanvien.Size = new System.Drawing.Size(772, 409);
             this.grid_nhanvien.TabIndex = 0;
+            this.grid_nhanvien.DoubleClick += new System.EventHandler(this.grid_nhanvien_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID Nhân viên";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // ho_ten
             // 
@@ -315,14 +324,6 @@
             this.noi_cap.HeaderText = "Nơi cấp";
             this.noi_cap.Name = "noi_cap";
             this.noi_cap.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID Nhân viên";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
             // 
             // frm_quanly_nhanvien
             // 
@@ -368,12 +369,12 @@
         private System.Windows.Forms.Button btn_cancelchange;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_createsave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ho_ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngay_sinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn so_cccd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngay_cap;
         private System.Windows.Forms.DataGridViewTextBoxColumn noi_cap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

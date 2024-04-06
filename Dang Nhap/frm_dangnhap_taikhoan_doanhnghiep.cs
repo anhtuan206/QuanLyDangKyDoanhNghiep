@@ -23,7 +23,9 @@ namespace QuanLyDangKyDoanhNghiep
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            parentForm.Close();
+            parentForm.Hide();
+            Form giaodien_doanhnghiep = new frm_giaodien_doanhnghiep();
+            giaodien_doanhnghiep.Show();
         }
     }
 }
