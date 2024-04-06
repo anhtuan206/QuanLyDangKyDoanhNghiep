@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be53976e4c5e43c999184b9088e94656" Name="Diagram1">
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.dan_toc" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.doanh_nghiep" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.external_account" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.internal_account" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.loai_hinh" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.nganh_nghe" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.nhan_vien" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tuanpa2_QuanLyDangKyDoanhNghiepModel.quoc_tich" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_dan_toc_quoc_tich" ManuallyRouted="false" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_external_account_dan_toc" ManuallyRouted="false" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_external_account" ManuallyRouted="false" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_internal_account" ManuallyRouted="false" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_nganh_nghe" ManuallyRouted="false" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_DoanhNghiep_loai_hinh" ManuallyRouted="false" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_external_account_quoc_tich" ManuallyRouted="false" />
+        <AssociationConnector Association="tuanpa2_QuanLyDangKyDoanhNghiepModel.FK_internal_account_nhan_vien" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

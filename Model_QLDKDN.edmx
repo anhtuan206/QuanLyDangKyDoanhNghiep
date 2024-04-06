@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tuanpa2_QuanLyDangKyDoanhNghiepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dan_toc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dan_toc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="quoc_tich_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doanh_nghiep">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="loai_hinh_id" Type="int" Nullable="false" />
+          <Property Name="nganh_nghe_id" Type="int" Nullable="false" />
+          <Property Name="dia_chi" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="so_dien_thoai" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email_doanh_nghiep" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="external_account_id" Type="int" Nullable="false" />
+          <Property Name="is_approved" Type="bit" Nullable="false" />
+          <Property Name="approved_by" Type="int" />
+          <Property Name="approved_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="external_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ho_ten" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="gioi_tinh" Type="smallint" />
+          <Property Name="ngay_sinh" Type="date" Nullable="false" />
+          <Property Name="quoc_tich_id" Type="int" />
+          <Property Name="dan_toc_id" Type="int" />
+          <Property Name="so_dien_thoai" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="so_fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="web_site" Type="nvarchar" MaxLength="200" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="is_locked" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="internal_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="is_locked" Type="bit" Nullable="false" />
+          <Property Name="id_nhan_vien" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="loai_hinh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="loai_hinh" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nganh_nghe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nganh_nghe" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nhan_vien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ho_ten" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="gioi_tinh" Type="bit" Nullable="false" />
+          <Property Name="ngay_sinh" Type="date" Nullable="false" />
+          <Property Name="so_cccd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ngay_cap" Type="date" Nullable="false" />
+          <Property Name="noi_cap" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="quoc_tich">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="quoc_tich" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dan_toc_quoc_tich">
+          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="1" />
+          <End Role="dan_toc" Type="Self.dan_toc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="quoc_tich">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="dan_toc">
+              <PropertyRef Name="quoc_tich_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanh_nghiep_external_account">
+          <End Role="external_account" Type="Self.external_account" Multiplicity="1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="external_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="external_account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanh_nghiep_internal_account">
+          <End Role="internal_account" Type="Self.internal_account" Multiplicity="0..1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="internal_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="approved_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanh_nghiep_nganh_nghe">
+          <End Role="nganh_nghe" Type="Self.nganh_nghe" Multiplicity="1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nganh_nghe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="nganh_nghe_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DoanhNghiep_loai_hinh">
+          <End Role="loai_hinh" Type="Self.loai_hinh" Multiplicity="1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loai_hinh">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="loai_hinh_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_external_account_dan_toc">
+          <End Role="dan_toc" Type="Self.dan_toc" Multiplicity="0..1" />
+          <End Role="external_account" Type="Self.external_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dan_toc">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="external_account">
+              <PropertyRef Name="dan_toc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_external_account_quoc_tich">
+          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="0..1" />
+          <End Role="external_account" Type="Self.external_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="quoc_tich">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="external_account">
+              <PropertyRef Name="quoc_tich_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_internal_account_nhan_vien">
+          <End Role="nhan_vien" Type="Self.nhan_vien" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="internal_account" Type="Self.internal_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhan_vien">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="internal_account">
+              <PropertyRef Name="id_nhan_vien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tuanpa2_QuanLyDangKyDoanhNghiepModelStoreContainer">
+          <EntitySet Name="dan_toc" EntityType="Self.dan_toc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doanh_nghiep" EntityType="Self.doanh_nghiep" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="external_account" EntityType="Self.external_account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="internal_account" EntityType="Self.internal_account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loai_hinh" EntityType="Self.loai_hinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nganh_nghe" EntityType="Self.nganh_nghe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhan_vien" EntityType="Self.nhan_vien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="quoc_tich" EntityType="Self.quoc_tich" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dan_toc_quoc_tich" Association="Self.FK_dan_toc_quoc_tich">
+            <End Role="quoc_tich" EntitySet="quoc_tich" />
+            <End Role="dan_toc" EntitySet="dan_toc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanh_nghiep_external_account" Association="Self.FK_doanh_nghiep_external_account">
+            <End Role="external_account" EntitySet="external_account" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanh_nghiep_internal_account" Association="Self.FK_doanh_nghiep_internal_account">
+            <End Role="internal_account" EntitySet="internal_account" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanh_nghiep_nganh_nghe" Association="Self.FK_doanh_nghiep_nganh_nghe">
+            <End Role="nganh_nghe" EntitySet="nganh_nghe" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DoanhNghiep_loai_hinh" Association="Self.FK_DoanhNghiep_loai_hinh">
+            <End Role="loai_hinh" EntitySet="loai_hinh" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_external_account_dan_toc" Association="Self.FK_external_account_dan_toc">
+            <End Role="dan_toc" EntitySet="dan_toc" />
+            <End Role="external_account" EntitySet="external_account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_external_account_quoc_tich" Association="Self.FK_external_account_quoc_tich">
+            <End Role="quoc_tich" EntitySet="quoc_tich" />
+            <End Role="external_account" EntitySet="external_account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_internal_account_nhan_vien" Association="Self.FK_internal_account_nhan_vien">
+            <End Role="nhan_vien" EntitySet="nhan_vien" />
+            <End Role="internal_account" EntitySet="internal_account" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tuanpa2_QuanLyDangKyDoanhNghiepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dan_toc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dan_toc1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="quoc_tich_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="quoc_tich" Relationship="Self.FK_dan_toc_quoc_tich" FromRole="dan_toc" ToRole="quoc_tich" />
+          <NavigationProperty Name="external_account" Relationship="Self.FK_external_account_dan_toc" FromRole="dan_toc" ToRole="external_account" />
+        </EntityType>
+        <EntityType Name="doanh_nghiep">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="loai_hinh_id" Type="Int32" Nullable="false" />
+          <Property Name="nganh_nghe_id" Type="Int32" Nullable="false" />
+          <Property Name="dia_chi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="so_dien_thoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email_doanh_nghiep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="external_account_id" Type="Int32" Nullable="false" />
+          <Property Name="is_approved" Type="Boolean" Nullable="false" />
+          <Property Name="approved_by" Type="Int32" />
+          <Property Name="approved_time" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="external_account" Relationship="Self.FK_doanh_nghiep_external_account" FromRole="doanh_nghiep" ToRole="external_account" />
+          <NavigationProperty Name="internal_account" Relationship="Self.FK_doanh_nghiep_internal_account" FromRole="doanh_nghiep" ToRole="internal_account" />
+          <NavigationProperty Name="nganh_nghe" Relationship="Self.FK_doanh_nghiep_nganh_nghe" FromRole="doanh_nghiep" ToRole="nganh_nghe" />
+          <NavigationProperty Name="loai_hinh" Relationship="Self.FK_DoanhNghiep_loai_hinh" FromRole="doanh_nghiep" ToRole="loai_hinh" />
+        </EntityType>
+        <EntityType Name="external_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ho_ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gioi_tinh" Type="Int16" />
+          <Property Name="ngay_sinh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="quoc_tich_id" Type="Int32" />
+          <Property Name="dan_toc_id" Type="Int32" />
+          <Property Name="so_dien_thoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="so_fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="web_site" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_locked" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="dan_toc" Relationship="Self.FK_external_account_dan_toc" FromRole="external_account" ToRole="dan_toc" />
+          <NavigationProperty Name="doanh_nghiep" Relationship="Self.FK_doanh_nghiep_external_account" FromRole="external_account" ToRole="doanh_nghiep" />
+          <NavigationProperty Name="quoc_tich" Relationship="Self.FK_external_account_quoc_tich" FromRole="external_account" ToRole="quoc_tich" />
+        </EntityType>
+        <EntityType Name="internal_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_locked" Type="Boolean" Nullable="false" />
+          <Property Name="id_nhan_vien" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="doanh_nghiep" Relationship="Self.FK_doanh_nghiep_internal_account" FromRole="internal_account" ToRole="doanh_nghiep" />
+          <NavigationProperty Name="nhan_vien" Relationship="Self.FK_internal_account_nhan_vien" FromRole="internal_account" ToRole="nhan_vien" />
+        </EntityType>
+        <EntityType Name="loai_hinh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="loai_hinh1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="doanh_nghiep" Relationship="Self.FK_DoanhNghiep_loai_hinh" FromRole="loai_hinh" ToRole="doanh_nghiep" />
+        </EntityType>
+        <EntityType Name="nganh_nghe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nganh_nghe1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="doanh_nghiep" Relationship="Self.FK_doanh_nghiep_nganh_nghe" FromRole="nganh_nghe" ToRole="doanh_nghiep" />
+        </EntityType>
+        <EntityType Name="nhan_vien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ho_ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gioi_tinh" Type="Boolean" Nullable="false" />
+          <Property Name="ngay_sinh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="so_cccd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngay_cap" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="noi_cap" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="internal_account" Relationship="Self.FK_internal_account_nhan_vien" FromRole="nhan_vien" ToRole="internal_account" />
+        </EntityType>
+        <EntityType Name="quoc_tich">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quoc_tich1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="dan_toc" Relationship="Self.FK_dan_toc_quoc_tich" FromRole="quoc_tich" ToRole="dan_toc" />
+          <NavigationProperty Name="external_account" Relationship="Self.FK_external_account_quoc_tich" FromRole="quoc_tich" ToRole="external_account" />
+        </EntityType>
+        <Association Name="FK_dan_toc_quoc_tich">
+          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="1" />
+          <End Role="dan_toc" Type="Self.dan_toc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="quoc_tich">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="dan_toc">
+              <PropertyRef Name="quoc_tich_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_external_account_dan_toc">
+          <End Role="dan_toc" Type="Self.dan_toc" Multiplicity="0..1" />
+          <End Role="external_account" Type="Self.external_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dan_toc">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="external_account">
+              <PropertyRef Name="dan_toc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanh_nghiep_external_account">
+          <End Role="external_account" Type="Self.external_account" Multiplicity="1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="external_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="external_account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanh_nghiep_internal_account">
+          <End Role="internal_account" Type="Self.internal_account" Multiplicity="0..1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="internal_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="approved_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanh_nghiep_nganh_nghe">
+          <End Role="nganh_nghe" Type="Self.nganh_nghe" Multiplicity="1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nganh_nghe">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="nganh_nghe_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DoanhNghiep_loai_hinh">
+          <End Role="loai_hinh" Type="Self.loai_hinh" Multiplicity="1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loai_hinh">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanh_nghiep">
+              <PropertyRef Name="loai_hinh_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_external_account_quoc_tich">
+          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="0..1" />
+          <End Role="external_account" Type="Self.external_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="quoc_tich">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="external_account">
+              <PropertyRef Name="quoc_tich_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_internal_account_nhan_vien">
+          <End Role="nhan_vien" Type="Self.nhan_vien" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="internal_account" Type="Self.internal_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhan_vien">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="internal_account">
+              <PropertyRef Name="id_nhan_vien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tuanpa2_QuanLyDangKyDoanhNghiepEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dan_toc" EntityType="Self.dan_toc" />
+          <EntitySet Name="doanh_nghiep" EntityType="Self.doanh_nghiep" />
+          <EntitySet Name="external_account" EntityType="Self.external_account" />
+          <EntitySet Name="internal_account" EntityType="Self.internal_account" />
+          <EntitySet Name="loai_hinh" EntityType="Self.loai_hinh" />
+          <EntitySet Name="nganh_nghe" EntityType="Self.nganh_nghe" />
+          <EntitySet Name="nhan_vien" EntityType="Self.nhan_vien" />
+          <EntitySet Name="quoc_tich" EntityType="Self.quoc_tich" />
+          <AssociationSet Name="FK_dan_toc_quoc_tich" Association="Self.FK_dan_toc_quoc_tich">
+            <End Role="quoc_tich" EntitySet="quoc_tich" />
+            <End Role="dan_toc" EntitySet="dan_toc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_external_account_dan_toc" Association="Self.FK_external_account_dan_toc">
+            <End Role="dan_toc" EntitySet="dan_toc" />
+            <End Role="external_account" EntitySet="external_account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanh_nghiep_external_account" Association="Self.FK_doanh_nghiep_external_account">
+            <End Role="external_account" EntitySet="external_account" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanh_nghiep_internal_account" Association="Self.FK_doanh_nghiep_internal_account">
+            <End Role="internal_account" EntitySet="internal_account" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanh_nghiep_nganh_nghe" Association="Self.FK_doanh_nghiep_nganh_nghe">
+            <End Role="nganh_nghe" EntitySet="nganh_nghe" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DoanhNghiep_loai_hinh" Association="Self.FK_DoanhNghiep_loai_hinh">
+            <End Role="loai_hinh" EntitySet="loai_hinh" />
+            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_external_account_quoc_tich" Association="Self.FK_external_account_quoc_tich">
+            <End Role="quoc_tich" EntitySet="quoc_tich" />
+            <End Role="external_account" EntitySet="external_account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_internal_account_nhan_vien" Association="Self.FK_internal_account_nhan_vien">
+            <End Role="nhan_vien" EntitySet="nhan_vien" />
+            <End Role="internal_account" EntitySet="internal_account" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tuanpa2_QuanLyDangKyDoanhNghiepModelStoreContainer" CdmEntityContainer="tuanpa2_QuanLyDangKyDoanhNghiepEntities">
+          <EntitySetMapping Name="dan_toc">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.dan_toc">
+              <MappingFragment StoreEntitySet="dan_toc">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="dan_toc1" ColumnName="dan_toc" />
+                <ScalarProperty Name="quoc_tich_id" ColumnName="quoc_tich_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doanh_nghiep">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.doanh_nghiep">
+              <MappingFragment StoreEntitySet="doanh_nghiep">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="loai_hinh_id" ColumnName="loai_hinh_id" />
+                <ScalarProperty Name="nganh_nghe_id" ColumnName="nganh_nghe_id" />
+                <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+                <ScalarProperty Name="so_dien_thoai" ColumnName="so_dien_thoai" />
+                <ScalarProperty Name="email_doanh_nghiep" ColumnName="email_doanh_nghiep" />
+                <ScalarProperty Name="external_account_id" ColumnName="external_account_id" />
+                <ScalarProperty Name="is_approved" ColumnName="is_approved" />
+                <ScalarProperty Name="approved_by" ColumnName="approved_by" />
+                <ScalarProperty Name="approved_time" ColumnName="approved_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="external_account">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.external_account">
+              <MappingFragment StoreEntitySet="external_account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+                <ScalarProperty Name="gioi_tinh" ColumnName="gioi_tinh" />
+                <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+                <ScalarProperty Name="quoc_tich_id" ColumnName="quoc_tich_id" />
+                <ScalarProperty Name="dan_toc_id" ColumnName="dan_toc_id" />
+                <ScalarProperty Name="so_dien_thoai" ColumnName="so_dien_thoai" />
+                <ScalarProperty Name="so_fax" ColumnName="so_fax" />
+                <ScalarProperty Name="web_site" ColumnName="web_site" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_locked" ColumnName="is_locked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="internal_account">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.internal_account">
+              <MappingFragment StoreEntitySet="internal_account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_locked" ColumnName="is_locked" />
+                <ScalarProperty Name="id_nhan_vien" ColumnName="id_nhan_vien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loai_hinh">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.loai_hinh">
+              <MappingFragment StoreEntitySet="loai_hinh">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="loai_hinh1" ColumnName="loai_hinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nganh_nghe">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.nganh_nghe">
+              <MappingFragment StoreEntitySet="nganh_nghe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nganh_nghe1" ColumnName="nganh_nghe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhan_vien">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.nhan_vien">
+              <MappingFragment StoreEntitySet="nhan_vien">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+                <ScalarProperty Name="gioi_tinh" ColumnName="gioi_tinh" />
+                <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+                <ScalarProperty Name="so_cccd" ColumnName="so_cccd" />
+                <ScalarProperty Name="ngay_cap" ColumnName="ngay_cap" />
+                <ScalarProperty Name="noi_cap" ColumnName="noi_cap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="quoc_tich">
+            <EntityTypeMapping TypeName="tuanpa2_QuanLyDangKyDoanhNghiepModel.quoc_tich">
+              <MappingFragment StoreEntitySet="quoc_tich">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="quoc_tich1" ColumnName="quoc_tich" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
