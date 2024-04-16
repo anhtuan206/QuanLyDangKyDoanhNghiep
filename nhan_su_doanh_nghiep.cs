@@ -12,30 +12,42 @@ namespace QuanLyDangKyDoanhNghiep
     using System;
     using System.Collections.Generic;
     
-    public partial class external_account
+    public partial class nhan_su_doanh_nghiep
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public external_account()
+        public nhan_su_doanh_nghiep()
         {
             this.doanh_nghiep = new HashSet<doanh_nghiep>();
+            this.doanh_nghiep1 = new HashSet<doanh_nghiep>();
+            this.doanh_nghiep2 = new HashSet<doanh_nghiep>();
         }
     
         public int id { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
+        public Nullable<int> id_doanh_nghiep { get; set; }
         public string ho_ten { get; set; }
-        public Nullable<short> gioi_tinh { get; set; }
+        public Nullable<bool> gioi_tinh { get; set; }
         public Nullable<System.DateTime> ngay_sinh { get; set; }
         public Nullable<int> id_quoc_tich { get; set; }
         public Nullable<int> id_dan_toc { get; set; }
-        public Nullable<System.DateTime> create_time { get; set; }
-        public Nullable<bool> is_locked { get; set; }
-        public Nullable<int> id_dia_chi { get; set; }
+        public string loai_giay_to_phap_ly { get; set; }
+        public string so_giay_to_phap_ly { get; set; }
+        public Nullable<System.DateTime> ngay_cap { get; set; }
+        public string noi_cap { get; set; }
+        public Nullable<System.DateTime> ngay_het_han { get; set; }
+        public Nullable<int> dia_chi_thuong_tru { get; set; }
+        public Nullable<int> dia_chi_lien_lac { get; set; }
+        public Nullable<int> id_chuc_danh { get; set; }
     
+        public virtual chuc_danh chuc_danh { get; set; }
         public virtual dan_toc dan_toc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<doanh_nghiep> doanh_nghiep { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<doanh_nghiep> doanh_nghiep1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<doanh_nghiep> doanh_nghiep2 { get; set; }
         public virtual quoc_tich quoc_tich { get; set; }
         public virtual thongtin_diachi thongtin_diachi { get; set; }
+        public virtual thongtin_diachi thongtin_diachi1 { get; set; }
     }
 }

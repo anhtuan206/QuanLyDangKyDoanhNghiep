@@ -12,30 +12,42 @@ namespace QuanLyDangKyDoanhNghiep
     using System;
     using System.Collections.Generic;
     
-    public partial class quoc_tich
+    public partial class thongtin_diachi
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public quoc_tich()
+        public thongtin_diachi()
         {
-            this.dan_toc = new HashSet<dan_toc>();
+            this.doanh_nghiep = new HashSet<doanh_nghiep>();
             this.external_account = new HashSet<external_account>();
             this.nhan_su_doanh_nghiep = new HashSet<nhan_su_doanh_nghiep>();
-            this.thanh_pho = new HashSet<thanh_pho>();
-            this.thongtin_diachi = new HashSet<thongtin_diachi>();
+            this.nhan_su_doanh_nghiep1 = new HashSet<nhan_su_doanh_nghiep>();
+            this.thong_tin_thue = new HashSet<thong_tin_thue>();
         }
     
         public int id { get; set; }
-        public string ten_quoc_tich { get; set; }
+        public Nullable<int> id_quoc_gia { get; set; }
+        public Nullable<int> id_thanh_pho { get; set; }
+        public Nullable<int> id_quan_huyen { get; set; }
+        public Nullable<int> id_phuong_xa { get; set; }
+        public string so_nha_ten_duong { get; set; }
+        public string dien_thoai { get; set; }
+        public string fax { get; set; }
+        public string email { get; set; }
+        public string website { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<dan_toc> dan_toc { get; set; }
+        public virtual ICollection<doanh_nghiep> doanh_nghiep { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<external_account> external_account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<nhan_su_doanh_nghiep> nhan_su_doanh_nghiep { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<thanh_pho> thanh_pho { get; set; }
+        public virtual ICollection<nhan_su_doanh_nghiep> nhan_su_doanh_nghiep1 { get; set; }
+        public virtual phuong_xa phuong_xa { get; set; }
+        public virtual quan_huyen quan_huyen { get; set; }
+        public virtual quoc_tich quoc_tich { get; set; }
+        public virtual thanh_pho thanh_pho { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<thongtin_diachi> thongtin_diachi { get; set; }
+        public virtual ICollection<thong_tin_thue> thong_tin_thue { get; set; }
     }
 }

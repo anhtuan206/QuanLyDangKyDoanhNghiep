@@ -17,13 +17,20 @@ namespace QuanLyDangKyDoanhNghiep
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public nganh_nghe()
         {
-            this.doanh_nghiep = new HashSet<doanh_nghiep>();
+            this.nganh_nghe_dangky = new HashSet<nganh_nghe_dangky>();
+            this.nganh_nghe1 = new HashSet<nganh_nghe>();
         }
     
         public int id { get; set; }
         public string ten_nganh_nghe { get; set; }
+        public int cap_do { get; set; }
+        public string ma_so { get; set; }
+        public Nullable<int> id_nganh_nghe { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<doanh_nghiep> doanh_nghiep { get; set; }
+        public virtual ICollection<nganh_nghe_dangky> nganh_nghe_dangky { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<nganh_nghe> nganh_nghe1 { get; set; }
+        public virtual nganh_nghe nganh_nghe2 { get; set; }
     }
 }

@@ -31,8 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_danh_sach_ho_so_dang_ky = new System.Windows.Forms.Button();
+            this.btn_dang_ky_doanh_nghiep = new System.Windows.Forms.Button();
             this.panMainFormBody = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,11 +59,33 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_danh_sach_ho_so_dang_ky);
+            this.panel2.Controls.Add(this.btn_dang_ky_doanh_nghiep);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 41);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(206, 409);
             this.panel2.TabIndex = 2;
+            // 
+            // btn_danh_sach_ho_so_dang_ky
+            // 
+            this.btn_danh_sach_ho_so_dang_ky.Location = new System.Drawing.Point(3, 51);
+            this.btn_danh_sach_ho_so_dang_ky.Name = "btn_danh_sach_ho_so_dang_ky";
+            this.btn_danh_sach_ho_so_dang_ky.Size = new System.Drawing.Size(200, 39);
+            this.btn_danh_sach_ho_so_dang_ky.TabIndex = 0;
+            this.btn_danh_sach_ho_so_dang_ky.Text = "Danh sách hồ sơ đăng ký";
+            this.btn_danh_sach_ho_so_dang_ky.UseVisualStyleBackColor = true;
+            this.btn_danh_sach_ho_so_dang_ky.Click += new System.EventHandler(this.btn_danh_sach_ho_so_dang_ky_Click);
+            // 
+            // btn_dang_ky_doanh_nghiep
+            // 
+            this.btn_dang_ky_doanh_nghiep.Location = new System.Drawing.Point(3, 6);
+            this.btn_dang_ky_doanh_nghiep.Name = "btn_dang_ky_doanh_nghiep";
+            this.btn_dang_ky_doanh_nghiep.Size = new System.Drawing.Size(200, 39);
+            this.btn_dang_ky_doanh_nghiep.TabIndex = 0;
+            this.btn_dang_ky_doanh_nghiep.Text = "Đăng ký doanh nghiệp";
+            this.btn_dang_ky_doanh_nghiep.UseVisualStyleBackColor = true;
+            this.btn_dang_ky_doanh_nghiep.Click += new System.EventHandler(this.btn_dang_ky_doanh_nghiep_Click);
             // 
             // panMainFormBody
             // 
@@ -80,8 +105,11 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_giaodien_doanhnghiep";
             this.Text = "Đăng ký doanh nghiệp";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_giaodien_doanhnghiep_FormClosed);
+            this.Load += new System.EventHandler(this.frm_giaodien_doanhnghiep_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -92,5 +120,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panMainFormBody;
+        private System.Windows.Forms.Button btn_dang_ky_doanh_nghiep;
+        private System.Windows.Forms.Button btn_danh_sach_ho_so_dang_ky;
     }
 }

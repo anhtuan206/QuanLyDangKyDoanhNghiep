@@ -12,23 +12,23 @@ namespace QuanLyDangKyDoanhNghiep
     using System;
     using System.Collections.Generic;
     
-    public partial class dan_toc
+    public partial class quan_huyen
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public dan_toc()
+        public quan_huyen()
         {
-            this.nhan_su_doanh_nghiep = new HashSet<nhan_su_doanh_nghiep>();
-            this.external_account = new HashSet<external_account>();
+            this.phuong_xa = new HashSet<phuong_xa>();
+            this.thongtin_diachi = new HashSet<thongtin_diachi>();
         }
     
         public int id { get; set; }
-        public string ten_dan_toc { get; set; }
-        public int id_quoc_tich { get; set; }
+        public string ten_quan_huyen { get; set; }
+        public int id_thanh_pho { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<nhan_su_doanh_nghiep> nhan_su_doanh_nghiep { get; set; }
-        public virtual quoc_tich quoc_tich { get; set; }
+        public virtual ICollection<phuong_xa> phuong_xa { get; set; }
+        public virtual thanh_pho thanh_pho { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<external_account> external_account { get; set; }
+        public virtual ICollection<thongtin_diachi> thongtin_diachi { get; set; }
     }
 }

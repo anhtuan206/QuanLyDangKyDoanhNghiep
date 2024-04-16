@@ -25,13 +25,23 @@ namespace QuanLyDangKyDoanhNghiep
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<bao_hiem_xa_hoi> bao_hiem_xa_hoi { get; set; }
+        public virtual DbSet<chuc_danh> chuc_danh { get; set; }
         public virtual DbSet<dan_toc> dan_toc { get; set; }
+        public virtual DbSet<dang_ky_su_dung_hoa_don> dang_ky_su_dung_hoa_don { get; set; }
         public virtual DbSet<doanh_nghiep> doanh_nghiep { get; set; }
         public virtual DbSet<external_account> external_account { get; set; }
         public virtual DbSet<internal_account> internal_account { get; set; }
         public virtual DbSet<loai_hinh> loai_hinh { get; set; }
         public virtual DbSet<nganh_nghe> nganh_nghe { get; set; }
+        public virtual DbSet<nganh_nghe_dangky> nganh_nghe_dangky { get; set; }
+        public virtual DbSet<nhan_su_doanh_nghiep> nhan_su_doanh_nghiep { get; set; }
         public virtual DbSet<nhan_vien> nhan_vien { get; set; }
+        public virtual DbSet<phuong_xa> phuong_xa { get; set; }
+        public virtual DbSet<quan_huyen> quan_huyen { get; set; }
         public virtual DbSet<quoc_tich> quoc_tich { get; set; }
+        public virtual DbSet<thanh_pho> thanh_pho { get; set; }
+        public virtual DbSet<thong_tin_thue> thong_tin_thue { get; set; }
+        public virtual DbSet<thongtin_diachi> thongtin_diachi { get; set; }
     }
 }

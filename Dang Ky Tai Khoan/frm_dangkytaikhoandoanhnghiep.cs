@@ -24,5 +24,10 @@ namespace QuanLyDangKyDoanhNghiep
         {
             MessageBox.Show("Đăng ký tài khoản thành công! Chọn đăng nhập tài khoản doanh nghiệp và đăng nhập với tài khoản vừa tạo.");
         }
+
+        private void frm_dangkytaikhoandoanhnghiep_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

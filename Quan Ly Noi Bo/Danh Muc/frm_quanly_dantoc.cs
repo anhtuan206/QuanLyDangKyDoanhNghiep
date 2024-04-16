@@ -37,7 +37,6 @@ namespace QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.Danh_Muc
                 grid_dan_toc.AutoGenerateColumns = false;
                 grid_dan_toc.DataSource = query.ToList();
                 grid_dan_toc.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
             }
         }
 

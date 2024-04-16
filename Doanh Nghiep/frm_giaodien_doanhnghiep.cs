@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyDangKyDoanhNghiep.Doanh_Nghiep;
+using QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,42 @@ namespace QuanLyDangKyDoanhNghiep
         public frm_giaodien_doanhnghiep()
         {
             InitializeComponent();
+        }
+        private Form currentFormChild;
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            currentFormChild = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panMainFormBody.Controls.Add(childForm);
+            panMainFormBody.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btn_dang_ky_doanh_nghiep_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_dang_ky_doanh_nghiep(this));
+        }
+
+        private void frm_giaodien_doanhnghiep_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_danh_sach_ho_so_dang_ky_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_danh_sach_ho_so_dang_ky(this));
+        }
+
+        private void frm_giaodien_doanhnghiep_Load(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_dang_ky_doanh_nghiep(this));
         }
     }
 }
