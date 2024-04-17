@@ -34,6 +34,8 @@ namespace QuanLyDangKyDoanhNghiep
         public Nullable<int> id_bao_hiem_xa_hoi { get; set; }
         public Nullable<int> id_hoa_don { get; set; }
         public Nullable<int> id_nguoi_nop_ho_so { get; set; }
+        public Nullable<System.DateTime> ngay_tao_ho_so { get; set; }
+        public Nullable<bool> is_submitted { get; set; }
     
         public virtual bao_hiem_xa_hoi bao_hiem_xa_hoi { get; set; }
         public virtual dang_ky_su_dung_hoa_don dang_ky_su_dung_hoa_don { get; set; }

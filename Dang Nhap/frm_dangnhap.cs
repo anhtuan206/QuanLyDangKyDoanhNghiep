@@ -18,8 +18,8 @@ namespace QuanLyDangKyDoanhNghiep
             InitializeComponent();
         }
 
-        private Form currentFormChild;
-        private void OpenChildForm(Form childForm)
+        public Form currentFormChild;
+        public void OpenChildForm(Form childForm)
         {
             if (currentFormChild != null)
             {
@@ -60,7 +60,7 @@ namespace QuanLyDangKyDoanhNghiep
         {
             this.Width = 900;
             this.Height = 800;
-            OpenChildForm(new frm_dangkytaikhoandoanhnghiep(this));
+            OpenChildForm(new frm_dang_ky_tai_khoan_doanh_nghiep(this));
         }
     }
 }

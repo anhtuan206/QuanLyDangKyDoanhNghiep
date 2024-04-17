@@ -13,10 +13,10 @@ namespace QuanLyDangKyDoanhNghiep
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class tuanpa2_QuanLyDangKyDoanhNghiepEntities : DbContext
+    public partial class QuanLyDangKyDoanhNghiepEntities : DbContext
     {
-        public tuanpa2_QuanLyDangKyDoanhNghiepEntities()
-            : base("name=tuanpa2_QuanLyDangKyDoanhNghiepEntities")
+        public QuanLyDangKyDoanhNghiepEntities()
+            : base("name=QuanLyDangKyDoanhNghiepEntities")
         {
         }
     

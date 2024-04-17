@@ -14,9 +14,14 @@ namespace QuanLyDangKyDoanhNghiep
 {
     public partial class frm_giaodien_doanhnghiep : Form
     {
-        public frm_giaodien_doanhnghiep()
+        public external_account external_Account;
+        public frm_dangnhap parentForm;
+
+        public frm_giaodien_doanhnghiep(external_account external_Account, frm_dangnhap parentForm)
         {
             InitializeComponent();
+            this.external_Account  = external_Account;
+            this.parentForm = parentForm;
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -37,22 +42,23 @@ namespace QuanLyDangKyDoanhNghiep
 
         private void btn_dang_ky_doanh_nghiep_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_dang_ky_doanh_nghiep(this));
+            OpenChildForm(new frm_dang_ky_doanh_nghiep(this,external_Account));
         }
 
         private void frm_giaodien_doanhnghiep_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            parentForm.Show();
         }
 
         private void btn_danh_sach_ho_so_dang_ky_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_danh_sach_ho_so_dang_ky(this));
+            OpenChildForm(new frm_danh_sach_ho_so_dang_ky(this,external_Account));
         }
 
         private void frm_giaodien_doanhnghiep_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_dang_ky_doanh_nghiep(this));
+            OpenChildForm(new frm_dang_ky_doanh_nghiep(this,external_Account));
+            btn_dang_ky_doanh_nghiep.Focus();
         }
     }
 }

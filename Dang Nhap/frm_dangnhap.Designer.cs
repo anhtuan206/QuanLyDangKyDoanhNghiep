@@ -43,7 +43,7 @@
             this.btn_dangnhaptaikhoandoanhnghiep.Location = new System.Drawing.Point(3, 72);
             this.btn_dangnhaptaikhoandoanhnghiep.Name = "btn_dangnhaptaikhoandoanhnghiep";
             this.btn_dangnhaptaikhoandoanhnghiep.Size = new System.Drawing.Size(244, 54);
-            this.btn_dangnhaptaikhoandoanhnghiep.TabIndex = 0;
+            this.btn_dangnhaptaikhoandoanhnghiep.TabIndex = 2;
             this.btn_dangnhaptaikhoandoanhnghiep.Text = "Đăng nhập tài khoản doanh nghiệp";
             this.btn_dangnhaptaikhoandoanhnghiep.UseVisualStyleBackColor = true;
             this.btn_dangnhaptaikhoandoanhnghiep.Click += new System.EventHandler(this.btn_dangnhaptaikhoandoanhnghiep_Click);
@@ -63,7 +63,7 @@
             this.btn_dangkytaikhoandoanhnghiep.Location = new System.Drawing.Point(3, 132);
             this.btn_dangkytaikhoandoanhnghiep.Name = "btn_dangkytaikhoandoanhnghiep";
             this.btn_dangkytaikhoandoanhnghiep.Size = new System.Drawing.Size(244, 50);
-            this.btn_dangkytaikhoandoanhnghiep.TabIndex = 2;
+            this.btn_dangkytaikhoandoanhnghiep.TabIndex = 3;
             this.btn_dangkytaikhoandoanhnghiep.Text = "Đăng ký tài khoản doanh nghiệp";
             this.btn_dangkytaikhoandoanhnghiep.UseVisualStyleBackColor = true;
             this.btn_dangkytaikhoandoanhnghiep.Click += new System.EventHandler(this.btn_dangkytaikhoandoanhnghiep_Click);

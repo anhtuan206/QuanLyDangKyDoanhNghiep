@@ -33,7 +33,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_quan_ly_danh_muc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,7 +54,7 @@
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btn_quan_ly_danh_muc);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 41);
             this.panel3.Name = "panel3";
@@ -88,15 +88,15 @@
             this.button2.Text = "Quản lý đăng ký doanh nghiệp";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_quan_ly_danh_muc
             // 
-            this.button1.Location = new System.Drawing.Point(26, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 57);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quản lý danh mục";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_quan_ly_danh_muc.Location = new System.Drawing.Point(26, 21);
+            this.btn_quan_ly_danh_muc.Name = "btn_quan_ly_danh_muc";
+            this.btn_quan_ly_danh_muc.Size = new System.Drawing.Size(102, 57);
+            this.btn_quan_ly_danh_muc.TabIndex = 0;
+            this.btn_quan_ly_danh_muc.Text = "Quản lý danh mục";
+            this.btn_quan_ly_danh_muc.UseVisualStyleBackColor = true;
+            this.btn_quan_ly_danh_muc.Click += new System.EventHandler(this.btn_quan_ly_danh_muc_Click);
             // 
             // panel1
             // 
@@ -132,6 +132,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_quan_ly_danh_muc;
     }
 }

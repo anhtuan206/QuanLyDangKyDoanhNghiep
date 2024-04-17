@@ -18,7 +18,6 @@ namespace QuanLyDangKyDoanhNghiep
         public thongtin_diachi()
         {
             this.doanh_nghiep = new HashSet<doanh_nghiep>();
-            this.external_account = new HashSet<external_account>();
             this.nhan_su_doanh_nghiep = new HashSet<nhan_su_doanh_nghiep>();
             this.nhan_su_doanh_nghiep1 = new HashSet<nhan_su_doanh_nghiep>();
             this.thong_tin_thue = new HashSet<thong_tin_thue>();
@@ -37,8 +36,6 @@ namespace QuanLyDangKyDoanhNghiep
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<doanh_nghiep> doanh_nghiep { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<external_account> external_account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<nhan_su_doanh_nghiep> nhan_su_doanh_nghiep { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

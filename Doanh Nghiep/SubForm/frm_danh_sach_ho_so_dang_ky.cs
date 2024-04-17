@@ -14,17 +14,19 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
     public partial class frm_danh_sach_ho_so_dang_ky : Form
     {
         public frm_giaodien_doanhnghiep parentForm;
-        private doanh_nghiep doanh_Nghiep = new doanh_nghiep();
+        public external_account external_Account;
+        public doanh_nghiep doanh_Nghiep = new doanh_nghiep();
 
-        public frm_danh_sach_ho_so_dang_ky(frm_giaodien_doanhnghiep parentForm)
+        public frm_danh_sach_ho_so_dang_ky(frm_giaodien_doanhnghiep parentForm,external_account external_Account)
         {
             InitializeComponent();
             this.parentForm = parentForm;
+            this.external_Account = external_Account;
         }
 
         private void grid_danh_sach_ho_so_dang_ky_ds()
         {
-            using (tuanpa2_QuanLyDangKyDoanhNghiepEntities db = new tuanpa2_QuanLyDangKyDoanhNghiepEntities())
+            using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
                 
                 grid_danh_sach_ho_so_dang_ky.AutoGenerateColumns = false;
@@ -43,7 +45,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
             if (grid_danh_sach_ho_so_dang_ky.CurrentRow.Index != -1)
             {
                 doanh_Nghiep.id = Convert.ToInt32(grid_danh_sach_ho_so_dang_ky.CurrentRow.Cells["id"].Value);
-                using (tuanpa2_QuanLyDangKyDoanhNghiepEntities db = new tuanpa2_QuanLyDangKyDoanhNghiepEntities())
+                using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
                     doanh_Nghiep = db.doanh_nghiep.Where(item => item.id == doanh_Nghiep.id).FirstOrDefault();
                 }
@@ -59,7 +61,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
         {
             if (MessageBox.Show("Bạn muốn xóa hồ sơ đã chọn?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                using (tuanpa2_QuanLyDangKyDoanhNghiepEntities db = new tuanpa2_QuanLyDangKyDoanhNghiepEntities())
+                using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
                     var entry = db.Entry(doanh_Nghiep);
                     if (entry.State == System.Data.Entity.EntityState.Detached)
@@ -78,8 +80,11 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
         private void btn_tiep_tuc_nhap_thong_tin_Click(object sender, EventArgs e)
         {
             parentForm.Hide();
-            frm_edit_doanh_nghiep frm_Edit_Doanh_Nghiep = new frm_edit_doanh_nghiep(parentForm,doanh_Nghiep);
-            frm_Edit_Doanh_Nghiep.Show();
+            //frm_edit_doanh_nghiep frm_Edit_Doanh_Nghiep = new frm_edit_doanh_nghiep(parentForm,doanh_Nghiep);
+            //frm_Edit_Doanh_Nghiep.Show();
+            parentForm.Hide();
+            frm_dang_ky_moi frm_dang_ky_moi = new frm_dang_ky_moi(parentForm, doanh_Nghiep);
+            frm_dang_ky_moi.Show();
         }
     }
 }

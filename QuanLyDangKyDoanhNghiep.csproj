@@ -169,76 +169,76 @@
     <Compile Include="dan_toc.cs">
       <DependentUpon>Model_QLDKDN.tt</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b10_dang_ky_su_dung_hoa_don.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b10_dang_ky_su_dung_hoa_don.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b10_dang_ky_su_dung_hoa_don.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b10_dang_ky_su_dung_hoa_don.Designer.cs">
       <DependentUpon>b10_dang_ky_su_dung_hoa_don.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b1_chon_loai_hinh.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b1_chon_loai_hinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b1_chon_loai_hinh.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b1_chon_loai_hinh.Designer.cs">
       <DependentUpon>b1_chon_loai_hinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b2_dia_chi.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b2_dia_chi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b2_dia_chi.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b2_dia_chi.Designer.cs">
       <DependentUpon>b2_dia_chi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b3_nganh_nghe.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b3_nganh_nghe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b3_nganh_nghe.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b3_nganh_nghe.Designer.cs">
       <DependentUpon>b3_nganh_nghe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b4_ten_doanh_nghiep.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b4_ten_doanh_nghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b4_ten_doanh_nghiep.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b4_ten_doanh_nghiep.Designer.cs">
       <DependentUpon>b4_ten_doanh_nghiep.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b5_chu_so_huu.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b5_chu_so_huu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b5_chu_so_huu.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b5_chu_so_huu.Designer.cs">
       <DependentUpon>b5_chu_so_huu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b6_thong_tin_von.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b6_thong_tin_von.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b6_thong_tin_von.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b6_thong_tin_von.Designer.cs">
       <DependentUpon>b6_thong_tin_von.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b7_nguoi_dai_dien_theo_phap_luat.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b7_nguoi_dai_dien_theo_phap_luat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b7_nguoi_dai_dien_theo_phap_luat.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b7_nguoi_dai_dien_theo_phap_luat.Designer.cs">
       <DependentUpon>b7_nguoi_dai_dien_theo_phap_luat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b8_thong_tin_thue.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b8_thong_tin_thue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b8_thong_tin_thue.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b8_thong_tin_thue.Designer.cs">
       <DependentUpon>b8_thong_tin_thue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b9_bao_hiem_xa_hoi.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_bao_hiem_xa_hoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\b9_bao_hiem_xa_hoi.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_bao_hiem_xa_hoi.Designer.cs">
       <DependentUpon>b9_bao_hiem_xa_hoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\frm_dang_ky_moi.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_dang_ky_moi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\frm_dang_ky_moi.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_dang_ky_moi.Designer.cs">
       <DependentUpon>frm_dang_ky_moi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\frm_edit_doanh_nghiep.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_edit_doanh_nghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\Dang_ky_moi\frm_edit_doanh_nghiep.Designer.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_edit_doanh_nghiep.Designer.cs">
       <DependentUpon>frm_edit_doanh_nghiep.cs</DependentUpon>
     </Compile>
     <Compile Include="Doanh Nghiep\SubForm\frm_dang_ky_doanh_nghiep.cs">
@@ -253,22 +253,22 @@
     <Compile Include="Dang Nhap\frm_dangnhap.Designer.cs">
       <DependentUpon>frm_dangnhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dang Ky Tai Khoan\frm_dangkytaikhoandoanhnghiep.cs">
+    <Compile Include="Dang Nhap\SubForm\frm_dang_ky_tai_khoan_doanh_nghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dang Ky Tai Khoan\frm_dangkytaikhoandoanhnghiep.Designer.cs">
-      <DependentUpon>frm_dangkytaikhoandoanhnghiep.cs</DependentUpon>
+    <Compile Include="Dang Nhap\SubForm\frm_dang_ky_tai_khoan_doanh_nghiep.Designer.cs">
+      <DependentUpon>frm_dang_ky_tai_khoan_doanh_nghiep.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_doanhnghiep.cs">
+    <Compile Include="Dang Nhap\SubForm\frm_dangnhap_taikhoan_doanhnghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_doanhnghiep.Designer.cs">
+    <Compile Include="Dang Nhap\SubForm\frm_dangnhap_taikhoan_doanhnghiep.Designer.cs">
       <DependentUpon>frm_dangnhap_taikhoan_doanhnghiep.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_quantri.cs">
+    <Compile Include="Dang Nhap\SubForm\frm_dangnhap_taikhoan_quantri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dang Nhap\frm_dangnhap_taikhoan_quantri.Designer.cs">
+    <Compile Include="Dang Nhap\SubForm\frm_dangnhap_taikhoan_quantri.Designer.cs">
       <DependentUpon>frm_dangnhap_taikhoan_quantri.cs</DependentUpon>
     </Compile>
     <Compile Include="Doanh Nghiep\frm_giaodien_doanhnghiep.cs">
@@ -310,28 +310,28 @@
     <Compile Include="phuong_xa.cs">
       <DependentUpon>Model_QLDKDN.tt</DependentUpon>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_dantoc.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_dantoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_dantoc.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_dantoc.Designer.cs">
       <DependentUpon>frm_quanly_dantoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_loaihinh.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_loaihinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_loaihinh.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_loaihinh.Designer.cs">
       <DependentUpon>frm_quanly_loaihinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nganhnghe.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_nganhnghe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nganhnghe.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_nganhnghe.Designer.cs">
       <DependentUpon>frm_quanly_nganhnghe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_quoctich.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_quoctich.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_quoctich.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_quoctich.Designer.cs">
       <DependentUpon>frm_quanly_quoctich.cs</DependentUpon>
     </Compile>
     <Compile Include="Quan Ly Noi Bo\frm_giaodien_quantri.cs">
@@ -340,28 +340,28 @@
     <Compile Include="Quan Ly Noi Bo\frm_giaodien_quantri.Designer.cs">
       <DependentUpon>frm_giaodien_quantri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_danhmuc.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\frm_quanly_danhmuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_danhmuc.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\frm_quanly_danhmuc.Designer.cs">
       <DependentUpon>frm_quanly_danhmuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nhanvien.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_nhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nhanvien.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_nhanvien.Designer.cs">
       <DependentUpon>frm_quanly_nhanvien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_quanly_taikhoan_doanhnghiep.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\frm_quanly_taikhoan_doanhnghiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_quanly_taikhoan_doanhnghiep.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\frm_quanly_taikhoan_doanhnghiep.Designer.cs">
       <DependentUpon>frm_quanly_taikhoan_doanhnghiep.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_taikhoan_noibo.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_taikhoan_noibo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_taikhoan_noibo.Designer.cs">
+    <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_taikhoan_noibo.Designer.cs">
       <DependentUpon>frm_quanly_taikhoan_noibo.cs</DependentUpon>
     </Compile>
     <Compile Include="Model_QLDKDN.Context.cs">
@@ -399,49 +399,49 @@
     <EmbeddedResource Include="Dang Nhap\frm_dangnhap.resx">
       <DependentUpon>frm_dangnhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dang Ky Tai Khoan\frm_dangkytaikhoandoanhnghiep.resx">
-      <DependentUpon>frm_dangkytaikhoandoanhnghiep.cs</DependentUpon>
+    <EmbeddedResource Include="Dang Nhap\SubForm\frm_dang_ky_tai_khoan_doanh_nghiep.resx">
+      <DependentUpon>frm_dang_ky_tai_khoan_doanh_nghiep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dang Nhap\frm_dangnhap_taikhoan_doanhnghiep.resx">
+    <EmbeddedResource Include="Dang Nhap\SubForm\frm_dangnhap_taikhoan_doanhnghiep.resx">
       <DependentUpon>frm_dangnhap_taikhoan_doanhnghiep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dang Nhap\frm_dangnhap_taikhoan_quantri.resx">
+    <EmbeddedResource Include="Dang Nhap\SubForm\frm_dangnhap_taikhoan_quantri.resx">
       <DependentUpon>frm_dangnhap_taikhoan_quantri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b10_dang_ky_su_dung_hoa_don.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b10_dang_ky_su_dung_hoa_don.resx">
       <DependentUpon>b10_dang_ky_su_dung_hoa_don.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b1_chon_loai_hinh.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b1_chon_loai_hinh.resx">
       <DependentUpon>b1_chon_loai_hinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b2_dia_chi.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b2_dia_chi.resx">
       <DependentUpon>b2_dia_chi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b3_nganh_nghe.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b3_nganh_nghe.resx">
       <DependentUpon>b3_nganh_nghe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b4_ten_doanh_nghiep.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b4_ten_doanh_nghiep.resx">
       <DependentUpon>b4_ten_doanh_nghiep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b5_chu_so_huu.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b5_chu_so_huu.resx">
       <DependentUpon>b5_chu_so_huu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b6_thong_tin_von.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b6_thong_tin_von.resx">
       <DependentUpon>b6_thong_tin_von.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b7_nguoi_dai_dien_theo_phap_luat.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b7_nguoi_dai_dien_theo_phap_luat.resx">
       <DependentUpon>b7_nguoi_dai_dien_theo_phap_luat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b8_thong_tin_thue.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b8_thong_tin_thue.resx">
       <DependentUpon>b8_thong_tin_thue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\b9_bao_hiem_xa_hoi.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_bao_hiem_xa_hoi.resx">
       <DependentUpon>b9_bao_hiem_xa_hoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\frm_dang_ky_moi.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_dang_ky_moi.resx">
       <DependentUpon>frm_dang_ky_moi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\Dang_ky_moi\frm_edit_doanh_nghiep.resx">
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_edit_doanh_nghiep.resx">
       <DependentUpon>frm_edit_doanh_nghiep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doanh Nghiep\SubForm\frm_dang_ky_doanh_nghiep.resx">
@@ -453,31 +453,31 @@
     <EmbeddedResource Include="Doanh Nghiep\SubForm\frm_danh_sach_ho_so_dang_ky.resx">
       <DependentUpon>frm_danh_sach_ho_so_dang_ky.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_dantoc.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_dantoc.resx">
       <DependentUpon>frm_quanly_dantoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_loaihinh.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_loaihinh.resx">
       <DependentUpon>frm_quanly_loaihinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nganhnghe.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_nganhnghe.resx">
       <DependentUpon>frm_quanly_nganhnghe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_quoctich.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_quoctich.resx">
       <DependentUpon>frm_quanly_quoctich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quan Ly Noi Bo\frm_giaodien_quantri.resx">
       <DependentUpon>frm_giaodien_quantri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_danhmuc.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\frm_quanly_danhmuc.resx">
       <DependentUpon>frm_quanly_danhmuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_nhanvien.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_nhanvien.resx">
       <DependentUpon>frm_quanly_nhanvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_quanly_taikhoan_doanhnghiep.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\frm_quanly_taikhoan_doanhnghiep.resx">
       <DependentUpon>frm_quanly_taikhoan_doanhnghiep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quan Ly Noi Bo\Danh Muc\frm_quanly_taikhoan_noibo.resx">
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_taikhoan_noibo.resx">
       <DependentUpon>frm_quanly_taikhoan_noibo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
