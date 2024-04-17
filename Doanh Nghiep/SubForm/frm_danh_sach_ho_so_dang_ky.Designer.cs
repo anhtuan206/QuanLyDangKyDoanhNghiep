@@ -37,6 +37,9 @@
             this.grid_danh_sach_ho_so_dang_ky = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngay_tao_ho_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_submitted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_approved = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -91,7 +94,7 @@
             this.btn_tiep_tuc_nhap_thong_tin.Name = "btn_tiep_tuc_nhap_thong_tin";
             this.btn_tiep_tuc_nhap_thong_tin.Size = new System.Drawing.Size(172, 31);
             this.btn_tiep_tuc_nhap_thong_tin.TabIndex = 0;
-            this.btn_tiep_tuc_nhap_thong_tin.Text = "Tiếp tục nhập thông tin";
+            this.btn_tiep_tuc_nhap_thong_tin.Text = "Cập nhật thông tin hồ sơ";
             this.btn_tiep_tuc_nhap_thong_tin.UseVisualStyleBackColor = true;
             this.btn_tiep_tuc_nhap_thong_tin.Click += new System.EventHandler(this.btn_tiep_tuc_nhap_thong_tin_Click);
             // 
@@ -109,7 +112,10 @@
             this.grid_danh_sach_ho_so_dang_ky.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_danh_sach_ho_so_dang_ky.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.ten});
+            this.ten,
+            this.ngay_tao_ho_so,
+            this.is_submitted,
+            this.is_approved});
             this.grid_danh_sach_ho_so_dang_ky.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_danh_sach_ho_so_dang_ky.Location = new System.Drawing.Point(0, 0);
             this.grid_danh_sach_ho_so_dang_ky.Name = "grid_danh_sach_ho_so_dang_ky";
@@ -130,6 +136,27 @@
             this.ten.HeaderText = "Tên doanh nghiệp";
             this.ten.Name = "ten";
             this.ten.ReadOnly = true;
+            // 
+            // ngay_tao_ho_so
+            // 
+            this.ngay_tao_ho_so.DataPropertyName = "ngay_tao_ho_so";
+            this.ngay_tao_ho_so.HeaderText = "Ngày tạo hồ sơ";
+            this.ngay_tao_ho_so.Name = "ngay_tao_ho_so";
+            this.ngay_tao_ho_so.ReadOnly = true;
+            // 
+            // is_submitted
+            // 
+            this.is_submitted.DataPropertyName = "is_submitted";
+            this.is_submitted.HeaderText = "Đã nộp hồ sơ";
+            this.is_submitted.Name = "is_submitted";
+            this.is_submitted.ReadOnly = true;
+            // 
+            // is_approved
+            // 
+            this.is_approved.DataPropertyName = "is_approved";
+            this.is_approved.HeaderText = "Hồ sơ đã được phê duyệt";
+            this.is_approved.Name = "is_approved";
+            this.is_approved.ReadOnly = true;
             // 
             // frm_danh_sach_ho_so_dang_ky
             // 
@@ -162,5 +189,8 @@
         private System.Windows.Forms.Button btn_tiep_tuc_nhap_thong_tin;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngay_tao_ho_so;
+        private System.Windows.Forms.DataGridViewTextBoxColumn is_submitted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn is_approved;
     }
 }

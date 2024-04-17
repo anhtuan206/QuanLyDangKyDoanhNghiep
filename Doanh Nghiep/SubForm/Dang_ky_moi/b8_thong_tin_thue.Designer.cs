@@ -33,6 +33,8 @@
             this.btn_luu_tam = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.txt_so_lao_dong_du_kien = new System.Windows.Forms.TextBox();
             this.ckb_co_bao_cao_tai_chinh_hop_nhat = new System.Windows.Forms.CheckBox();
             this.rdo_hach_toan_phu_thuoc = new System.Windows.Forms.RadioButton();
@@ -70,16 +72,16 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -124,12 +126,11 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.txt_ngay_bat_dau_hoat_dong_kinh_doanh);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.txt_so_lao_dong_du_kien);
             this.panel3.Controls.Add(this.ckb_co_bao_cao_tai_chinh_hop_nhat);
-            this.panel3.Controls.Add(this.rdo_hach_toan_phu_thuoc);
-            this.panel3.Controls.Add(this.rdo_hach_toan_doc_lap);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.rdo_dia_chi_khac);
             this.panel3.Controls.Add(this.rdo_giong_dia_chi_cty);
@@ -142,6 +143,22 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 693);
             this.panel3.TabIndex = 22;
+            // 
+            // txt_ngay_bat_dau_hoat_dong_kinh_doanh
+            // 
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Location = new System.Drawing.Point(246, 549);
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Name = "txt_ngay_bat_dau_hoat_dong_kinh_doanh";
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Size = new System.Drawing.Size(200, 20);
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 555);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(180, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Ngày bắt đầu hoạt động kinh doanh";
             // 
             // txt_so_lao_dong_du_kien
             // 
@@ -163,7 +180,7 @@
             // rdo_hach_toan_phu_thuoc
             // 
             this.rdo_hach_toan_phu_thuoc.AutoSize = true;
-            this.rdo_hach_toan_phu_thuoc.Location = new System.Drawing.Point(388, 477);
+            this.rdo_hach_toan_phu_thuoc.Location = new System.Drawing.Point(146, 3);
             this.rdo_hach_toan_phu_thuoc.Name = "rdo_hach_toan_phu_thuoc";
             this.rdo_hach_toan_phu_thuoc.Size = new System.Drawing.Size(126, 17);
             this.rdo_hach_toan_phu_thuoc.TabIndex = 23;
@@ -174,7 +191,7 @@
             // rdo_hach_toan_doc_lap
             // 
             this.rdo_hach_toan_doc_lap.AutoSize = true;
-            this.rdo_hach_toan_doc_lap.Location = new System.Drawing.Point(246, 477);
+            this.rdo_hach_toan_doc_lap.Location = new System.Drawing.Point(4, 3);
             this.rdo_hach_toan_doc_lap.Name = "rdo_hach_toan_doc_lap";
             this.rdo_hach_toan_doc_lap.Size = new System.Drawing.Size(114, 17);
             this.rdo_hach_toan_doc_lap.TabIndex = 23;
@@ -589,15 +606,6 @@
             this.label20.TabIndex = 11;
             this.label20.Text = "Số nhà/đường/phố/tổ/xóm/ấp/thôn";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 479);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Hình thức hạch toán";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -607,21 +615,23 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Số lao động dự kiến";
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 555);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(180, 13);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Ngày bắt đầu hoạt động kinh doanh";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 479);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Hình thức hạch toán";
             // 
-            // txt_ngay_bat_dau_hoat_dong_kinh_doanh
+            // panel4
             // 
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Location = new System.Drawing.Point(246, 549);
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Name = "txt_ngay_bat_dau_hoat_dong_kinh_doanh";
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Size = new System.Drawing.Size(200, 20);
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.TabIndex = 27;
+            this.panel4.Controls.Add(this.rdo_hach_toan_phu_thuoc);
+            this.panel4.Controls.Add(this.rdo_hach_toan_doc_lap);
+            this.panel4.Location = new System.Drawing.Point(239, 470);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(275, 24);
+            this.panel4.TabIndex = 28;
             // 
             // b8_thong_tin_thue
             // 
@@ -645,6 +655,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -697,5 +709,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker txt_ngay_bat_dau_hoat_dong_kinh_doanh;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel4;
     }
 }

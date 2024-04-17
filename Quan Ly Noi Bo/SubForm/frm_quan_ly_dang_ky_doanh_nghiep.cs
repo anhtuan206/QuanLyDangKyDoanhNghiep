@@ -9,60 +9,51 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
+namespace QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm
 {
-    public partial class frm_danh_sach_ho_so_dang_ky : Form
+    public partial class frm_quan_ly_dang_ky_doanh_nghiep : Form
     {
-        public frm_giaodien_doanhnghiep parentForm;
-        public external_account external_Account;
         public doanh_nghiep doanh_Nghiep = new doanh_nghiep();
+        public internal_account internal_Account;
+        public frm_giaodien_quantri parentForm;
 
-        public frm_danh_sach_ho_so_dang_ky(frm_giaodien_doanhnghiep parentForm, external_account external_Account)
+        public frm_quan_ly_dang_ky_doanh_nghiep(frm_giaodien_quantri parentForm,internal_account internal_Account)
         {
             InitializeComponent();
+            this.internal_Account = internal_Account;
             this.parentForm = parentForm;
-            this.external_Account = external_Account;
         }
 
+        private void frm_quan_ly_dang_ky_doanh_nghiep_Load(object sender, EventArgs e)
+        {
+            btn_xem_ho_so.Enabled = false;
+            btn_duyet_ho_so.Enabled = false;
+            btn_xoa_ho_so.Enabled = false;
+            btn_khong_duyet_ho_so.Enabled = false;
+            grid_danh_sach_ho_so_dang_ky_ds();
+        }
         private void grid_danh_sach_ho_so_dang_ky_ds()
         {
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
 
                 grid_danh_sach_ho_so_dang_ky.AutoGenerateColumns = false;
-                grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.ToList<doanh_nghiep>();
+                grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.Where(item => item.is_submitted==true && item.is_approved==null).ToList<doanh_nghiep>();
                 grid_danh_sach_ho_so_dang_ky.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
         }
 
-        private void frm_danh_sach_ho_so_dang_ky_Load(object sender, EventArgs e)
+        private void btn_xoa_ho_so_Click(object sender, EventArgs e)
         {
-            grid_danh_sach_ho_so_dang_ky_ds();
-        }
-
-        private void grid_danh_sach_ho_so_dang_ky_DoubleClick(object sender, EventArgs e)
-        {
-            if (grid_danh_sach_ho_so_dang_ky.CurrentRow.Index != -1)
-            {
-                doanh_Nghiep.id = Convert.ToInt32(grid_danh_sach_ho_so_dang_ky.CurrentRow.Cells["id"].Value);
-                using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
-                {
-                    doanh_Nghiep = db.doanh_nghiep.Where(item => item.id == doanh_Nghiep.id).FirstOrDefault();
-                }
-                if (doanh_Nghiep != null)
-                {
-                    btn_tiep_tuc_nhap_thong_tin.Enabled = true;
-                    btn_xoa_ho_so.Enabled = true;
-                    if (doanh_Nghiep.is_submitted == true)
-                    {
-                        btn_tiep_tuc_nhap_thong_tin.Text = "Xem thông tin hồ sơ";
-                    }
-                    else
-                    {
-                        btn_tiep_tuc_nhap_thong_tin.Text = "Cập nhật thông tin hồ sơ";
-                    }
-                }
-            }
+            xoa_nganh_nghe_dang_ky();
+            xoa_nhan_su_doanh_nghiep();
+            xoa_dia_chi_doanh_nghiep();
+            xoa_thong_tin_thue();
+            xoa_doanh_nghiep();
+            btn_xem_ho_so.Enabled = false;
+            btn_duyet_ho_so.Enabled = false;
+            btn_xoa_ho_so.Enabled = false;
+            btn_khong_duyet_ho_so.Enabled = false;
         }
 
         private void xoa_nganh_nghe_dang_ky()
@@ -98,8 +89,6 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
                 db.doanh_nghiep.Remove(doanh_Nghiep);
                 db.SaveChanges();
                 grid_danh_sach_ho_so_dang_ky_ds();
-                btn_tiep_tuc_nhap_thong_tin.Enabled = false;
-                btn_xoa_ho_so.Enabled = false;
             }
         }
 
@@ -128,27 +117,54 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
             }
         }
 
-        private void btn_xoa_ho_so_Click(object sender, EventArgs e)
+        private void btn_xem_ho_so_Click(object sender, EventArgs e)
         {
-            if (doanh_Nghiep.is_submitted == true || doanh_Nghiep.is_approved == true) {
-                MessageBox.Show("Không thể xóa hồ sơ đã nộp hoặc đã được phê duyệt");
-                return;
-            }
-            if (MessageBox.Show("Bạn muốn xóa hồ sơ đã chọn?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                xoa_nganh_nghe_dang_ky();
-                xoa_nhan_su_doanh_nghiep();
-                xoa_dia_chi_doanh_nghiep();
-                xoa_thong_tin_thue();
-                xoa_doanh_nghiep();
+            this.Hide();
+            frm_dang_ky_moi frm_Dang_Ky_Moi = new frm_dang_ky_moi(null, doanh_Nghiep, this);
+            frm_Dang_Ky_Moi.Show();
+        }
+
+        private void grid_danh_sach_ho_so_dang_ky_DoubleClick(object sender, EventArgs e)
+        {
+            if (grid_danh_sach_ho_so_dang_ky.CurrentRow.Index != -1) { 
+                doanh_Nghiep.id = Convert.ToInt32(grid_danh_sach_ho_so_dang_ky.CurrentRow.Cells["id"].Value);
+                using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities()) { 
+                    doanh_Nghiep = db.doanh_nghiep.Where(item => item.id == doanh_Nghiep.id).FirstOrDefault();
+                }
+                btn_xem_ho_so.Enabled = true;
+                btn_duyet_ho_so.Enabled = true;
+                btn_xoa_ho_so.Enabled = true;
+                btn_khong_duyet_ho_so.Enabled = true;
             }
         }
 
-        private void btn_tiep_tuc_nhap_thong_tin_Click(object sender, EventArgs e)
+        private void btn_duyet_ho_so_Click(object sender, EventArgs e)
         {
-            parentForm.Hide();
-            frm_dang_ky_moi frm_dang_ky_moi = new frm_dang_ky_moi(parentForm, doanh_Nghiep,null);
-            frm_dang_ky_moi.Show();
+            doanh_Nghiep.is_approved = true;
+            doanh_Nghiep.approved_time = DateTime.Now;
+            doanh_Nghiep.approved_by = internal_Account.id;
+            using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
+            {
+                db.Entry(doanh_Nghiep).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        private void btn_khong_duyet_ho_so_Click(object sender, EventArgs e)
+        {
+            doanh_Nghiep.is_approved = false;
+            doanh_Nghiep.approved_time = DateTime.Now;
+            doanh_Nghiep.approved_by = internal_Account.id;
+            using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
+            {
+                db.Entry(doanh_Nghiep).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        private void frm_quan_ly_dang_ky_doanh_nghiep_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentForm.Show();
         }
     }
 }

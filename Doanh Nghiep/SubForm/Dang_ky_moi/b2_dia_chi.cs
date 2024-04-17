@@ -227,6 +227,8 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
 
         private void b2_dia_chi_Load(object sender, EventArgs e)
         {
+            if (doanh_Nghiep.is_submitted == true) { btn_luu_tam.Enabled = false; btn_luu_tam.Visible = false; }
+
             get_dia_chi_on_load();
             cbb_quoc_gia_ds();
         }

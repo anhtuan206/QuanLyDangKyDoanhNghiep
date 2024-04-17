@@ -46,6 +46,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
 
         private void b1_chon_loai_hinh_Load(object sender, EventArgs e)
         {
+            if (doanh_Nghiep.is_submitted==true) { btn_luu_tam.Enabled = false; btn_luu_tam.Visible = false; }
             cbb_loai_hinh_doanh_nghiep_ds();
         }
         private void cbb_chon_loai_hinh_SelectedIndexChanged(object sender, EventArgs e)

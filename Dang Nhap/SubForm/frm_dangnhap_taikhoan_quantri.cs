@@ -30,11 +30,19 @@ namespace QuanLyDangKyDoanhNghiep
                     internal_Account = db.internal_account.Where(item => item.username == txt_username.Text.Trim().ToLower()).FirstOrDefault();
                     if (internal_Account != null)
                     {
-                        if (internal_Account.username == txt_username.Text.Trim().ToLower() && internal_Account.password == txt_password.Text.Trim())
+                        if (internal_Account.is_locked!=false)
                         {
-                            frm_giaodien_quantri giaodien_quantri = new frm_giaodien_quantri(internal_Account, parentForm);
-                            giaodien_quantri.Show();
-                            parentForm.Hide();
+                            MessageBox.Show("Tài khoản bị khóa");
+                        }
+                        else
+                        {
+                            if (internal_Account.username == txt_username.Text.Trim().ToLower() && internal_Account.password == txt_password.Text.Trim())
+                            {
+                                txt_username.Text = txt_password.Text = string.Empty;
+                                frm_giaodien_quantri giaodien_quantri = new frm_giaodien_quantri(internal_Account, parentForm);
+                                giaodien_quantri.Show();
+                                parentForm.Hide();
+                            }
                         }
                     }
                     else { MessageBox.Show("Tài khoản hoặc mật khẩu chưa đúng!"); }

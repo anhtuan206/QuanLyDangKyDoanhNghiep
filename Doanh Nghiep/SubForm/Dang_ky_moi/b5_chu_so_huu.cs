@@ -377,6 +377,8 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
 
         private void b5_chu_so_huu_Load(object sender, EventArgs e)
         {
+            if (doanh_Nghiep.is_submitted == true) { btn_luu_tam.Enabled = false; btn_luu_tam.Visible = false; }
+
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
                 quoc_Tich_list = db.quoc_tich.ToList<quoc_tich>();

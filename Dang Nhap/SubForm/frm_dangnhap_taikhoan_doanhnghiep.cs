@@ -22,16 +22,24 @@ namespace QuanLyDangKyDoanhNghiep
 
         private void btn_dang_nhap_Click(object sender, EventArgs e)
         {
-            if (txt_email.Text.Trim().Length > 0 && txt_password.Text.Trim().Length > 0) { 
+            if (txt_email.Text.Trim().Length > 0 && txt_password.Text.Trim().Length > 0) {
                 using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
                     external_Account = db.external_account.Where(item => item.email == txt_email.Text.Trim().ToLower()).FirstOrDefault();
                     if (external_Account != null)
                     {
-                        if (external_Account.email == txt_email.Text.Trim().ToLower() && external_Account.password == txt_password.Text.Trim()) {
-                            frm_giaodien_doanhnghiep giaodien_doanhnghiep = new frm_giaodien_doanhnghiep(external_Account, parentForm);
-                            giaodien_doanhnghiep.Show();
-                            parentForm.Hide();
+                        if (external_Account.is_locked!=false)
+                        {
+                            MessageBox.Show("Tài khoản bị khóa");
+                        }
+                        else
+                        {
+                            if (external_Account.email == txt_email.Text.Trim().ToLower() && external_Account.password == txt_password.Text.Trim()) {
+                                txt_email.Text = txt_password.Text = string.Empty;
+                                frm_giaodien_doanhnghiep giaodien_doanhnghiep = new frm_giaodien_doanhnghiep(external_Account, parentForm);
+                                giaodien_doanhnghiep.Show();
+                                parentForm.Hide();
+                            }
                         }
                     }
                     else { MessageBox.Show("Email hoặc mật khẩu chưa đúng!"); }

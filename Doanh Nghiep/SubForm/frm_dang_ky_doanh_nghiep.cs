@@ -42,11 +42,13 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep
                 doanh_Nghiep.external_account_id = external_Account.id;
                 using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
+                    doanh_Nghiep.ngay_tao_ho_so = DateTime.Today;
+                    doanh_Nghiep.external_account_id = external_Account.id;
                     db.doanh_nghiep.Add(doanh_Nghiep);
                     db.SaveChanges();
                 }
                 parentForm.Hide();
-                frm_dang_ky_moi frm_dang_ky_moi = new frm_dang_ky_moi(parentForm,doanh_Nghiep);
+                frm_dang_ky_moi frm_dang_ky_moi = new frm_dang_ky_moi(parentForm,doanh_Nghiep, null);
                 frm_dang_ky_moi.Show();
             }
             else

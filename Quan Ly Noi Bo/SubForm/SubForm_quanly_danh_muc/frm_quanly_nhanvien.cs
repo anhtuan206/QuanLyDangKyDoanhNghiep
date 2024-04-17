@@ -37,14 +37,14 @@ namespace QuanLyDangKyDoanhNghiep
             {
                 using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
-                    var entry = db.Entry(nhan_Vien);
-                    if (entry.State == System.Data.Entity.EntityState.Detached)
-                    {
-                        db.nhan_vien.Attach(nhan_Vien);
+                    //var entry = db.Entry(nhan_Vien);
+                    //if (entry.State == System.Data.Entity.EntityState.Detached)
+                    //{
+                    //    db.nhan_vien.Attach(nhan_Vien);
+                    //}
                         db.nhan_vien.Remove(nhan_Vien);
                         db.SaveChanges();
                         clear_Form();
-                    }
                 }
             }
             clear_Form();

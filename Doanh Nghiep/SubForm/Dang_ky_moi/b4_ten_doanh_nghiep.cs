@@ -26,6 +26,8 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
 
         private void b4_ten_doanh_nghiep_Load(object sender, EventArgs e)
         {
+            if (doanh_Nghiep.is_submitted == true) { btn_luu_tam.Enabled = false; btn_luu_tam.Visible = false; }
+
             string tendoanhnghiep = doanh_Nghiep.ten;
             if (doanh_Nghiep.ten != null) { 
                 if (tendoanhnghiep.Length == 0)

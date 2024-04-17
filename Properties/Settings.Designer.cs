@@ -22,17 +22,5 @@ namespace QuanLyDangKyDoanhNghiep.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.72.1.246;Initial Catalog=tuanpa2_QuanLyDangKyDoanhNghiep;Persist S" +
-            "ecurity Info=True;User ID=eoffice;Password=.net@123;Encrypt=False;TrustServerCer" +
-            "tificate=True")]
-        public string tuanpa2_QuanLyDangKyDoanhNghiepConnectionString {
-            get {
-                return ((string)(this["tuanpa2_QuanLyDangKyDoanhNghiepConnectionString"]));
-            }
-        }
     }
 }

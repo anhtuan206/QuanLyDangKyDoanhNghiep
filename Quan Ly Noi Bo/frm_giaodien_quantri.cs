@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,20 @@ namespace QuanLyDangKyDoanhNghiep
         private void frm_giaodien_quantri_FormClosed(object sender, FormClosedEventArgs e)
         {
             frm_Dangnhap.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_quan_ly_dang_ky_doanh_nghiep frm_Quan_Ly_Dang_Ky_Doanh_Nghiep = new frm_quan_ly_dang_ky_doanh_nghiep(this,internal_Account);
+            frm_Quan_Ly_Dang_Ky_Doanh_Nghiep.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_quanly_taikhoan_doanhnghiep frm_Quanly_Taikhoan_Doanhnghiep = new frm_quanly_taikhoan_doanhnghiep(this,internal_Account);
+            frm_Quanly_Taikhoan_Doanhnghiep.Show();
         }
     }
 }

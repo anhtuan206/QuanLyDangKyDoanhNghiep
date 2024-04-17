@@ -15,7 +15,7 @@ namespace QuanLyDangKyDoanhNghiep
     public partial class nganh_nghe_dangky
     {
         public int id { get; set; }
-        public int id_doanh_nghiep { get; set; }
+        public Nullable<int> id_doanh_nghiep { get; set; }
         public Nullable<int> id_nganh_nghe { get; set; }
         public string nganh_nghe_khac { get; set; }
         public bool is_nganh_nghe_khac { get; set; }

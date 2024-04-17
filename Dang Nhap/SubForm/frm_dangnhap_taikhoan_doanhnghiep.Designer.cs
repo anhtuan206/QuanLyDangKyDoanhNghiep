@@ -74,12 +74,14 @@
             // 
             // btn_dang_nhap
             // 
+            this.btn_dang_nhap.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_dang_nhap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_dang_nhap.Location = new System.Drawing.Point(110, 129);
             this.btn_dang_nhap.Name = "btn_dang_nhap";
             this.btn_dang_nhap.Size = new System.Drawing.Size(200, 25);
             this.btn_dang_nhap.TabIndex = 9;
             this.btn_dang_nhap.Text = "Đăng nhập";
-            this.btn_dang_nhap.UseVisualStyleBackColor = true;
+            this.btn_dang_nhap.UseVisualStyleBackColor = false;
             this.btn_dang_nhap.Click += new System.EventHandler(this.btn_dang_nhap_Click);
             // 
             // txt_password

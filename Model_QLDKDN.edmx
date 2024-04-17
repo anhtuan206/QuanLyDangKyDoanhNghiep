@@ -57,6 +57,7 @@
           <Property Name="id_nguoi_nop_ho_so" Type="int" />
           <Property Name="ngay_tao_ho_so" Type="datetime" />
           <Property Name="is_submitted" Type="bit" />
+          <Property Name="von_dieu_le" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="external_account">
           <Key>
@@ -109,7 +110,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_doanh_nghiep" Type="int" Nullable="false" />
+          <Property Name="id_doanh_nghiep" Type="int" />
           <Property Name="id_nganh_nghe" Type="int" />
           <Property Name="nganh_nghe_khac" Type="nvarchar" MaxLength="200" />
           <Property Name="is_nganh_nghe_khac" Type="bit" Nullable="false" />
@@ -424,7 +425,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_nganh_nghe_dangky_doanh_nghiep">
-          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="1" />
+          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="0..1" />
           <End Role="nganh_nghe_dangky" Type="Self.nganh_nghe_dangky" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="doanh_nghiep">
@@ -911,6 +912,7 @@
           <Property Name="id_nguoi_nop_ho_so" Type="Int32" />
           <Property Name="ngay_tao_ho_so" Type="DateTime" Precision="3" />
           <Property Name="is_submitted" Type="Boolean" />
+          <Property Name="von_dieu_le" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="bao_hiem_xa_hoi" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_bao_hiem_xa_hoi" FromRole="doanh_nghiep" ToRole="bao_hiem_xa_hoi" />
           <NavigationProperty Name="dang_ky_su_dung_hoa_don" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_dang_ky_su_dung_hoa_don" FromRole="doanh_nghiep" ToRole="dang_ky_su_dung_hoa_don" />
           <NavigationProperty Name="external_account" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_external_account" FromRole="doanh_nghiep" ToRole="external_account" />
@@ -983,7 +985,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_doanh_nghiep" Type="Int32" Nullable="false" />
+          <Property Name="id_doanh_nghiep" Type="Int32" />
           <Property Name="id_nganh_nghe" Type="Int32" />
           <Property Name="nganh_nghe_khac" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="is_nganh_nghe_khac" Type="Boolean" Nullable="false" />
@@ -1284,7 +1286,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_nganh_nghe_dangky_doanh_nghiep">
-          <End Type="QuanLyDangKyDoanhNghiepModel.doanh_nghiep" Role="doanh_nghiep" Multiplicity="1" />
+          <End Type="QuanLyDangKyDoanhNghiepModel.doanh_nghiep" Role="doanh_nghiep" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.nganh_nghe_dangky" Role="nganh_nghe_dangky" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="doanh_nghiep">
@@ -1522,6 +1524,7 @@
           <EntitySetMapping Name="doanh_nghiep">
             <EntityTypeMapping TypeName="QuanLyDangKyDoanhNghiepModel.doanh_nghiep">
               <MappingFragment StoreEntitySet="doanh_nghiep">
+                <ScalarProperty Name="von_dieu_le" ColumnName="von_dieu_le" />
                 <ScalarProperty Name="is_submitted" ColumnName="is_submitted" />
                 <ScalarProperty Name="ngay_tao_ho_so" ColumnName="ngay_tao_ho_so" />
                 <ScalarProperty Name="id_nguoi_nop_ho_so" ColumnName="id_nguoi_nop_ho_so" />

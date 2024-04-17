@@ -14,7 +14,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
     {
         private thong_tin_thue thong_Tin_Thue;
         private doanh_nghiep doanh_Nghiep;
-        private thongtin_diachi thongtin_Diachi;
+        private thongtin_diachi thongtin_Diachi = new thongtin_diachi();
 
         private List<quoc_tich> quoc_Tich_list = new List<quoc_tich>();
 
@@ -88,7 +88,17 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
 
         private void load_existing_data()
         {
-            if (thong_Tin_Thue == null) { return; }
+            if (thong_Tin_Thue == null) {
+                rdo_giong_dia_chi_cty.Checked = true;
+                rdo_hach_toan_doc_lap.Checked = true;
+                cbb_ngay_bat_dau_nam_tai_chinh.SelectedItem = 1;
+                cbb_thang_bat_dau_nam_tai_chinh.SelectedItem = 1;
+                cbb_ngay_ket_thuc_nam_tai_chinh.SelectedItem = 31;
+                cbb_thang_ket_thuc_nam_tai_chinh.SelectedItem = 12;
+                txt_so_lao_dong_du_kien.Text = "0";
+                txt_ngay_bat_dau_hoat_dong_kinh_doanh.Value = DateTime.Today;
+                return; 
+            }
             if (thong_Tin_Thue.id_dia_chi_nhan_thong_bao_thue == doanh_Nghiep.id_dia_chi)
             {
                 rdo_giong_dia_chi_cty.Checked = true;
@@ -105,18 +115,61 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
                     if (thongtin_Diachi.website != null) txt_website.Text = thongtin_Diachi.website;
                 }
             }
-            cbb_ngay_bat_dau_nam_tai_chinh.SelectedItem = thong_Tin_Thue.ngay_bat_dau_nam_tai_chinh;
-            cbb_thang_bat_dau_nam_tai_chinh.SelectedItem = thong_Tin_Thue.thang_bat_dau_nam_tai_chinh;
-            cbb_ngay_ket_thuc_nam_tai_chinh.SelectedItem = thong_Tin_Thue.ngay_ket_thuc_nam_tai_chinh;
-            cbb_thang_ket_thuc_nam_tai_chinh.SelectedItem = thong_Tin_Thue.thang_ket_thuc_nam_tai_chinh;
+            if (thong_Tin_Thue.ngay_bat_dau_nam_tai_chinh != null && thong_Tin_Thue.ngay_bat_dau_nam_tai_chinh !=0) { 
+                foreach (string item in cbb_ngay_bat_dau_nam_tai_chinh.Items)
+                {
+                    if (item == thong_Tin_Thue.ngay_bat_dau_nam_tai_chinh.ToString())
+                    {
+                        cbb_ngay_bat_dau_nam_tai_chinh.SelectedItem = item;
+
+                    }
+                }
+            }
+            if (thong_Tin_Thue.thang_bat_dau_nam_tai_chinh != null && thong_Tin_Thue.thang_bat_dau_nam_tai_chinh != 0)
+            {
+                foreach (string item in cbb_thang_bat_dau_nam_tai_chinh.Items)
+                {
+                    if (item == thong_Tin_Thue.thang_bat_dau_nam_tai_chinh.ToString())
+                    {
+                        cbb_thang_bat_dau_nam_tai_chinh.SelectedItem = item;
+
+                    }
+                }
+            }
+            if (thong_Tin_Thue.ngay_ket_thuc_nam_tai_chinh != null && thong_Tin_Thue.ngay_ket_thuc_nam_tai_chinh != 0)
+            {
+                foreach (string item in cbb_ngay_ket_thuc_nam_tai_chinh.Items)
+                {
+                    if (item == thong_Tin_Thue.ngay_ket_thuc_nam_tai_chinh.ToString())
+                    {
+                        cbb_ngay_ket_thuc_nam_tai_chinh.SelectedItem = item;
+
+                    }
+                }
+            }
+
+            if (thong_Tin_Thue.thang_ket_thuc_nam_tai_chinh != null && thong_Tin_Thue.thang_ket_thuc_nam_tai_chinh != 0)
+            {
+                foreach (string item in cbb_thang_ket_thuc_nam_tai_chinh.Items)
+                {
+                    if (item == thong_Tin_Thue.thang_ket_thuc_nam_tai_chinh.ToString())
+                    {
+                        cbb_thang_ket_thuc_nam_tai_chinh.SelectedItem = item;
+
+                    }
+                }
+            }
             if (thong_Tin_Thue.hach_toan_doc_lap==true) { rdo_hach_toan_doc_lap.Checked = true; } else { rdo_hach_toan_phu_thuoc.Checked=true; }
             if (thong_Tin_Thue.bao_cao_tai_chinh_hop_nhat==true) { ckb_co_bao_cao_tai_chinh_hop_nhat.Checked = true; } else { ckb_co_bao_cao_tai_chinh_hop_nhat.Checked = false; }
             if (thong_Tin_Thue.so_lao_dong_du_kien!=null) { txt_so_lao_dong_du_kien.Text = thong_Tin_Thue.so_lao_dong_du_kien.ToString(); }
+            if (thong_Tin_Thue.ngay_bat_dau_hoat_dong_kinh_doanh!=null) { txt_ngay_bat_dau_hoat_dong_kinh_doanh.Value = thong_Tin_Thue.ngay_bat_dau_hoat_dong_kinh_doanh.Value; }
 
         }
 
         private void b8_thong_tin_thue_Load(object sender, EventArgs e)
         {
+            if (doanh_Nghiep.is_submitted == true) { btn_luu_tam.Enabled = false; btn_luu_tam.Visible = false; }
+
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
                 quoc_Tich_list = db.quoc_tich.ToList<quoc_tich>();
@@ -132,6 +185,15 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
             else
             {
                 thong_Tin_Thue = new thong_tin_thue();
+                cbb_quoc_gia_ds();
+                rdo_giong_dia_chi_cty.Checked = true;
+                rdo_hach_toan_doc_lap.Checked = true;
+                cbb_ngay_bat_dau_nam_tai_chinh.SelectedItem = 1;
+                cbb_thang_bat_dau_nam_tai_chinh.SelectedItem = 1;
+                cbb_ngay_ket_thuc_nam_tai_chinh.SelectedItem = 31;
+                cbb_thang_ket_thuc_nam_tai_chinh.SelectedItem = 12;
+                txt_so_lao_dong_du_kien.Text = "0";
+                txt_ngay_bat_dau_hoat_dong_kinh_doanh.Value = DateTime.Today;
             }
         }
 
@@ -254,7 +316,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
                     cbb_phuong_xa.DisplayMember = "ten_phuong_xa";
                     cbb_phuong_xa.ValueMember = "id";
                     int defaultIndex = 0;
-                    if (thongtin_Diachi.id != 0 && thongtin_Diachi.id_phuong_xa != null)
+                    if (thongtin_Diachi.id_phuong_xa != null)
                     {
                         defaultIndex = cbb_list.FindIndex(qt => qt.id == thongtin_Diachi.id_phuong_xa);
                     }
@@ -375,11 +437,6 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
                         txt_so_lao_dong_du_kien.Text = string.Empty;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Số lao động dự kiến không hợp lệ");
-                    txt_so_lao_dong_du_kien.Text = string.Empty;
-                }
             }
 
             if (txt_ngay_bat_dau_hoat_dong_kinh_doanh.Value <= DateTime.Now)
@@ -400,6 +457,20 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
             bool is_diachi_valid = true;
             if (rdo_dia_chi_khac.Checked==true) {
                 is_diachi_valid = validate_dia_chi();
+            }
+            else
+            {
+                if (doanh_Nghiep.id_dia_chi!=null)
+                {
+                    int id_dia_chi_doanh_nghiep = (int)doanh_Nghiep.id_dia_chi;
+                    thong_Tin_Thue.id_dia_chi_nhan_thong_bao_thue = id_dia_chi_doanh_nghiep;
+
+                }
+                else
+                {
+                    MessageBox.Show("Chưa có thông tin địa chỉ doanh nghiệp");
+                    is_diachi_valid = false;
+                }
             }
             bool is_valid_thongtin_thue = validate_thong_tin_thue();
             if (is_diachi_valid == true && is_valid_thongtin_thue==true) { 

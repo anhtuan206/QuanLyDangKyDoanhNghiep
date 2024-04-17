@@ -223,11 +223,11 @@
     <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b8_thong_tin_thue.Designer.cs">
       <DependentUpon>b8_thong_tin_thue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_bao_hiem_xa_hoi.cs">
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_nop_ho_so.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_bao_hiem_xa_hoi.Designer.cs">
-      <DependentUpon>b9_bao_hiem_xa_hoi.cs</DependentUpon>
+    <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_nop_ho_so.Designer.cs">
+      <DependentUpon>b9_nop_ho_so.cs</DependentUpon>
     </Compile>
     <Compile Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_dang_ky_moi.cs">
       <SubType>Form</SubType>
@@ -309,6 +309,12 @@
     </Compile>
     <Compile Include="phuong_xa.cs">
       <DependentUpon>Model_QLDKDN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\SubForm\frm_quan_ly_dang_ky_doanh_nghiep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quan Ly Noi Bo\SubForm\frm_quan_ly_dang_ky_doanh_nghiep.Designer.cs">
+      <DependentUpon>frm_quan_ly_dang_ky_doanh_nghiep.cs</DependentUpon>
     </Compile>
     <Compile Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_dantoc.cs">
       <SubType>Form</SubType>
@@ -435,8 +441,8 @@
     <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b8_thong_tin_thue.resx">
       <DependentUpon>b8_thong_tin_thue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_bao_hiem_xa_hoi.resx">
-      <DependentUpon>b9_bao_hiem_xa_hoi.cs</DependentUpon>
+    <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\b9_nop_ho_so.resx">
+      <DependentUpon>b9_nop_ho_so.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doanh Nghiep\SubForm\Dang_ky_moi\frm_dang_ky_moi.resx">
       <DependentUpon>frm_dang_ky_moi.cs</DependentUpon>
@@ -452,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Doanh Nghiep\SubForm\frm_danh_sach_ho_so_dang_ky.resx">
       <DependentUpon>frm_danh_sach_ho_so_dang_ky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\frm_quan_ly_dang_ky_doanh_nghiep.resx">
+      <DependentUpon>frm_quan_ly_dang_ky_doanh_nghiep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quan Ly Noi Bo\SubForm\SubForm_quanly_danh_muc\frm_quanly_dantoc.resx">
       <DependentUpon>frm_quanly_dantoc.cs</DependentUpon>

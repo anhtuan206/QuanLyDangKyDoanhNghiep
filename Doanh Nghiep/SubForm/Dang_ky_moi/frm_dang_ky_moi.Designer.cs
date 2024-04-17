@@ -92,7 +92,7 @@
             this.btn_buoc8.Name = "btn_buoc8";
             this.btn_buoc8.Size = new System.Drawing.Size(200, 39);
             this.btn_buoc8.TabIndex = 1;
-            this.btn_buoc8.Text = "8. Thông tin hóa đơn";
+            this.btn_buoc8.Text = "9. Nộp hồ sơ";
             this.btn_buoc8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_buoc8.UseVisualStyleBackColor = true;
             this.btn_buoc8.Click += new System.EventHandler(this.btn_buoc8_Click);
@@ -202,6 +202,7 @@
             this.btn_huy_dang_ky.TabIndex = 0;
             this.btn_huy_dang_ky.Text = "Hủy đăng ký hồ sơ";
             this.btn_huy_dang_ky.UseVisualStyleBackColor = false;
+            this.btn_huy_dang_ky.Click += new System.EventHandler(this.btn_huy_dang_ky_Click);
             // 
             // btn_quay_lai
             // 

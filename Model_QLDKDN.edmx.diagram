@@ -5,24 +5,24 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="be53976e4c5e43c999184b9088e94656" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.bao_hiem_xa_hoi" Width="1.5" PointX="12" PointY="21.375" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.chuc_danh" Width="1.5" PointX="9.75" PointY="14.125" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.dan_toc" Width="1.5" PointX="3" PointY="11.5" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.dang_ky_su_dung_hoa_don" Width="1.5" PointX="12" PointY="15.125" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.doanh_nghiep" Width="1.5" PointX="14.25" PointY="6.75" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.external_account" Width="1.5" PointX="5.25" PointY="11.75" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.internal_account" Width="1.5" PointX="12" PointY="18" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.loai_hinh" Width="1.5" PointX="12" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nganh_nghe" Width="1.5" PointX="14.25" PointY="2.5" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nganh_nghe_dangky" Width="1.5" PointX="16.5" PointY="8.625" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nhan_su_doanh_nghiep" Width="1.5" PointX="12" PointY="8.25" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nhan_vien" Width="1.5" PointX="9.75" PointY="18" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.phuong_xa" Width="1.5" PointX="7.5" PointY="8.75" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.quan_huyen" Width="1.5" PointX="5.25" PointY="8.625" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.quoc_tich" Width="1.5" PointX="0.75" PointY="10" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.thanh_pho" Width="1.5" PointX="3" PointY="8.625" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.thong_tin_thue" Width="1.5" PointX="12" PointY="3.75" />
-        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.thongtin_diachi" Width="1.5" PointX="9.75" PointY="8.25" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.bao_hiem_xa_hoi" Width="1.5" PointX="13" PointY="13.75" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.chuc_danh" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.dan_toc" Width="1.5" PointX="3" PointY="7.375" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.dang_ky_su_dung_hoa_don" Width="1.5" PointX="13" PointY="16" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.doanh_nghiep" Width="1.5" PointX="15.25" PointY="5" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.external_account" Width="1.5" PointX="8.25" PointY="5.125" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.internal_account" Width="1.5" PointX="13" PointY="3.125" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.loai_hinh" Width="1.5" PointX="13" PointY="6.375" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nganh_nghe" Width="1.5" PointX="15.25" PointY="0.875" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nganh_nghe_dangky" Width="1.5" PointX="17.5" PointY="7" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nhan_su_doanh_nghiep" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.nhan_vien" Width="1.5" PointX="10.75" PointY="3.125" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.phuong_xa" Width="1.5" PointX="7.5" PointY="10.375" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.quan_huyen" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.quoc_tich" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.thanh_pho" Width="1.5" PointX="3" PointY="10.25" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.thong_tin_thue" Width="1.5" PointX="13" PointY="8.875" />
+        <EntityTypeShape EntityType="QuanLyDangKyDoanhNghiepModel.thongtin_diachi" Width="1.5" PointX="10.75" PointY="8.375" />
         <AssociationConnector Association="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_bao_hiem_xa_hoi" />
         <AssociationConnector Association="QuanLyDangKyDoanhNghiepModel.FK_nhan_su_doanh_nghiep_chuc_danh" />
         <AssociationConnector Association="QuanLyDangKyDoanhNghiepModel.FK_chu_so_huu_doanh_nghiep_dan_toc" />

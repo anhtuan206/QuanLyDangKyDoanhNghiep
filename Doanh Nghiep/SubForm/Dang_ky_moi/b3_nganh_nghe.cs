@@ -203,6 +203,8 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
 
         private void b3_nganh_nghe_Load(object sender, EventArgs e)
         {
+            if (doanh_Nghiep.is_submitted == true) { btn_luu_tam.Enabled = false; btn_luu_tam.Visible = false; }
+
             nganh_Nghe_Dangky.id = 0;
             grid_nganh_nghe_dang_ky_ds();
             cbb_nganh_nghe_cap_1_ds();
@@ -353,24 +355,24 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
             {
                 using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
-                    var entry = db.Entry(nganh_Nghe_Dangky);
-                    if (entry.State == System.Data.Entity.EntityState.Detached)
-                    {
-                        db.nganh_nghe_dangky.Attach(nganh_Nghe_Dangky);
-                        db.nganh_nghe_dangky.Remove(nganh_Nghe_Dangky);
-                        db.SaveChanges();
-                        grid_nganh_nghe_dang_ky_ds();
-                        btn_xoa_nganh_nghe_dang_ky.Enabled = false;
-                        btn_them_nganh_nghe_dang_ky.Enabled = true;
-                        cbb_nganh_nghe_cap_1.Enabled = true;
-                        cbb_nganh_nghe_cap_2.Enabled = true;
-                        cbb_nganh_nghe_cap_3.Enabled = true;
-                        cbb_nganh_nghe_cap_4.Enabled = true;
-                        cbb_nganh_nghe_cap_5.Enabled = true;
-                        ckb_nganh_nghe_khac.Checked = false;
-                        txt_nganh_nghe_khac.Text = string.Empty;
-                        txt_nganh_nghe_khac.Visible = false;
-                    }
+                    //var entry = db.Entry(nganh_Nghe_Dangky);
+                    //if (entry.State == System.Data.Entity.EntityState.Detached)
+                    //{
+                    //    db.nganh_nghe_dangky.Attach(nganh_Nghe_Dangky);
+                    //}
+                    db.nganh_nghe_dangky.Remove(nganh_Nghe_Dangky);
+                    db.SaveChanges();
+                    grid_nganh_nghe_dang_ky_ds();
+                    btn_xoa_nganh_nghe_dang_ky.Enabled = false;
+                    btn_them_nganh_nghe_dang_ky.Enabled = true;
+                    cbb_nganh_nghe_cap_1.Enabled = true;
+                    cbb_nganh_nghe_cap_2.Enabled = true;
+                    cbb_nganh_nghe_cap_3.Enabled = true;
+                    cbb_nganh_nghe_cap_4.Enabled = true;
+                    cbb_nganh_nghe_cap_5.Enabled = true;
+                    ckb_nganh_nghe_khac.Checked = false;
+                    txt_nganh_nghe_khac.Text = string.Empty;
+                    txt_nganh_nghe_khac.Visible = false;
                 }
             }
         }

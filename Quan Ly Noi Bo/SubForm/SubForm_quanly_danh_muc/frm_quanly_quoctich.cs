@@ -104,14 +104,14 @@ namespace QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.Danh_Muc
             {
                 using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
-                    var entry = db.Entry(quoc_Tich);
-                    if (entry.State == System.Data.Entity.EntityState.Detached)
-                    {
-                        db.quoc_tich.Attach(quoc_Tich);
+                    //var entry = db.Entry(quoc_Tich);
+                    //if (entry.State == System.Data.Entity.EntityState.Detached)
+                    //{
+                    //    db.quoc_tich.Attach(quoc_Tich);
+                    //}
                         db.quoc_tich.Remove(quoc_Tich);
                         db.SaveChanges();
                         clear_Form();
-                    }
                 }
             }
         }
