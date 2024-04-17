@@ -528,7 +528,6 @@
       <DependentUpon>Model_QLDKDN.edmx</DependentUpon>
       <LastGenOutput>Model_QLDKDN.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model_QLDKDN.edmx.sql" />
     <Content Include="Model_QLDKDN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model_QLDKDN.edmx</DependentUpon>
