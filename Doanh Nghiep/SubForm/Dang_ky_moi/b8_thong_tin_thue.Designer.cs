@@ -33,12 +33,13 @@
             this.btn_luu_tam = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.rdo_hach_toan_phu_thuoc = new System.Windows.Forms.RadioButton();
+            this.rdo_hach_toan_doc_lap = new System.Windows.Forms.RadioButton();
             this.txt_ngay_bat_dau_hoat_dong_kinh_doanh = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_so_lao_dong_du_kien = new System.Windows.Forms.TextBox();
             this.ckb_co_bao_cao_tai_chinh_hop_nhat = new System.Windows.Forms.CheckBox();
-            this.rdo_hach_toan_phu_thuoc = new System.Windows.Forms.RadioButton();
-            this.rdo_hach_toan_doc_lap = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,14 +75,13 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -144,38 +144,14 @@
             this.panel3.Size = new System.Drawing.Size(800, 693);
             this.panel3.TabIndex = 22;
             // 
-            // txt_ngay_bat_dau_hoat_dong_kinh_doanh
+            // panel4
             // 
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Location = new System.Drawing.Point(246, 549);
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Name = "txt_ngay_bat_dau_hoat_dong_kinh_doanh";
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Size = new System.Drawing.Size(200, 20);
-            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.TabIndex = 27;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 555);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(180, 13);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Ngày bắt đầu hoạt động kinh doanh";
-            // 
-            // txt_so_lao_dong_du_kien
-            // 
-            this.txt_so_lao_dong_du_kien.Location = new System.Drawing.Point(246, 523);
-            this.txt_so_lao_dong_du_kien.Name = "txt_so_lao_dong_du_kien";
-            this.txt_so_lao_dong_du_kien.Size = new System.Drawing.Size(100, 20);
-            this.txt_so_lao_dong_du_kien.TabIndex = 25;
-            // 
-            // ckb_co_bao_cao_tai_chinh_hop_nhat
-            // 
-            this.ckb_co_bao_cao_tai_chinh_hop_nhat.AutoSize = true;
-            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Location = new System.Drawing.Point(246, 500);
-            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Name = "ckb_co_bao_cao_tai_chinh_hop_nhat";
-            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Size = new System.Drawing.Size(171, 17);
-            this.ckb_co_bao_cao_tai_chinh_hop_nhat.TabIndex = 24;
-            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Text = "Có báo cáo tài chính hợp nhất";
-            this.ckb_co_bao_cao_tai_chinh_hop_nhat.UseVisualStyleBackColor = true;
+            this.panel4.Controls.Add(this.rdo_hach_toan_phu_thuoc);
+            this.panel4.Controls.Add(this.rdo_hach_toan_doc_lap);
+            this.panel4.Location = new System.Drawing.Point(239, 470);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(275, 24);
+            this.panel4.TabIndex = 28;
             // 
             // rdo_hach_toan_phu_thuoc
             // 
@@ -198,6 +174,42 @@
             this.rdo_hach_toan_doc_lap.TabStop = true;
             this.rdo_hach_toan_doc_lap.Text = "Hạch toán độc lập";
             this.rdo_hach_toan_doc_lap.UseVisualStyleBackColor = true;
+            // 
+            // txt_ngay_bat_dau_hoat_dong_kinh_doanh
+            // 
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Location = new System.Drawing.Point(246, 502);
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Name = "txt_ngay_bat_dau_hoat_dong_kinh_doanh";
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.Size = new System.Drawing.Size(200, 20);
+            this.txt_ngay_bat_dau_hoat_dong_kinh_doanh.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 508);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(180, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Ngày bắt đầu hoạt động kinh doanh";
+            // 
+            // txt_so_lao_dong_du_kien
+            // 
+            this.txt_so_lao_dong_du_kien.Enabled = false;
+            this.txt_so_lao_dong_du_kien.Location = new System.Drawing.Point(246, 551);
+            this.txt_so_lao_dong_du_kien.Name = "txt_so_lao_dong_du_kien";
+            this.txt_so_lao_dong_du_kien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_so_lao_dong_du_kien.Size = new System.Drawing.Size(100, 20);
+            this.txt_so_lao_dong_du_kien.TabIndex = 25;
+            this.txt_so_lao_dong_du_kien.Visible = false;
+            // 
+            // ckb_co_bao_cao_tai_chinh_hop_nhat
+            // 
+            this.ckb_co_bao_cao_tai_chinh_hop_nhat.AutoSize = true;
+            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Location = new System.Drawing.Point(246, 528);
+            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Name = "ckb_co_bao_cao_tai_chinh_hop_nhat";
+            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Size = new System.Drawing.Size(171, 17);
+            this.ckb_co_bao_cao_tai_chinh_hop_nhat.TabIndex = 24;
+            this.ckb_co_bao_cao_tai_chinh_hop_nhat.Text = "Có báo cáo tài chính hợp nhất";
+            this.ckb_co_bao_cao_tai_chinh_hop_nhat.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -609,11 +621,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 526);
+            this.label9.Location = new System.Drawing.Point(14, 554);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Số lao động dự kiến";
+            this.label9.Visible = false;
             // 
             // label8
             // 
@@ -623,15 +636,6 @@
             this.label8.Size = new System.Drawing.Size(104, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Hình thức hạch toán";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.rdo_hach_toan_phu_thuoc);
-            this.panel4.Controls.Add(this.rdo_hach_toan_doc_lap);
-            this.panel4.Location = new System.Drawing.Point(239, 470);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(275, 24);
-            this.panel4.TabIndex = 28;
             // 
             // b8_thong_tin_thue
             // 
@@ -649,14 +653,14 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

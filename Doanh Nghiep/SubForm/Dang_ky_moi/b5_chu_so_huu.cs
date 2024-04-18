@@ -197,8 +197,8 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
         {
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
-                //List<quoc_tich> cbb_list = db.quoc_tich.ToList();
-                List<quoc_tich> cbb_list = quoc_Tich_list;
+                List<quoc_tich> cbb_list = db.quoc_tich.ToList();
+                //List<quoc_tich> cbb_list = quoc_Tich_list;
 
                 if (cbb_list.Count > 0)
                 {
@@ -216,10 +216,6 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
                     }
                     cbb_quoc_tich.SelectedIndex = defaultIndex;
                     change_selected_quoc_tich_id();
-                }
-                else
-                {
-                    MessageBox.Show("Danh sách quốc tịch trống");
                 }
             }
         }
@@ -265,8 +261,8 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
         {
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
-                //List<quoc_tich> cbb_list = db.quoc_tich.ToList();
-                List<quoc_tich> cbb_list = quoc_Tich_list;
+                List<quoc_tich> cbb_list = db.quoc_tich.ToList();
+                //List<quoc_tich> cbb_list = quoc_Tich_list;
 
                 if (cbb_list.Count > 0)
                 {
@@ -298,7 +294,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
         {
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
-                List<thanh_pho> cbb_list = db.thanh_pho.ToList();
+                List<thanh_pho> cbb_list = db.thanh_pho.Where(item => item.id_quoc_gia == selected_quoc_gia_id).ToList();
                 if (cbb_list.Count > 0)
                 {
                     cbb_thanh_pho.DataSource = cbb_list;
@@ -311,10 +307,6 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
                     }
                     cbb_thanh_pho.SelectedIndex = defaultIndex;
                     change_selected_thanh_pho_id();
-                }
-                else
-                {
-                    MessageBox.Show("Danh sách thành phố trống");
                 }
             }
         }
@@ -330,7 +322,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
         {
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
-                List<quan_huyen> cbb_list = db.quan_huyen.ToList();
+                List<quan_huyen> cbb_list = db.quan_huyen.Where(item => item.id_thanh_pho == selected_thanh_pho_id).ToList();
                 if (cbb_list.Count > 0)
                 {
                     cbb_quan_huyen.DataSource = cbb_list;
@@ -358,7 +350,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
         {
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
-                List<phuong_xa> cbb_list = db.phuong_xa.ToList();
+                List<phuong_xa> cbb_list = db.phuong_xa.Where(item => item.id_quan_huyen == selected_quan_huyen_id).ToList();
                 if (cbb_list.Count > 0)
                 {
                     cbb_phuong_xa.DataSource = cbb_list;
@@ -379,10 +371,10 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
         {
             if (doanh_Nghiep.is_submitted == true) { btn_luu_tam.Enabled = false; btn_luu_tam.Visible = false; }
 
-            using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
-            {
-                quoc_Tich_list = db.quoc_tich.ToList<quoc_tich>();
-            }
+            //using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
+            //{
+            //    quoc_Tich_list = db.quoc_tich.ToList<quoc_tich>();
+            //}
             if (doanh_Nghiep.id_chu_so_huu != 0 && doanh_Nghiep.id_chu_so_huu!=null)
             {
                 using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
