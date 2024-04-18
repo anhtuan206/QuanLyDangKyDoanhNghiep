@@ -21,13 +21,13 @@ namespace QuanLyDangKyDoanhNghiep
         }
     
         public int id { get; set; }
-        public int id_dia_chi_nhan_thong_bao_thue { get; set; }
-        public bool hach_toan_doc_lap { get; set; }
-        public bool bao_cao_tai_chinh_hop_nhat { get; set; }
-        public int thang_bat_dau_nam_tai_chinh { get; set; }
-        public int ngay_bat_dau_nam_tai_chinh { get; set; }
-        public int thang_ket_thuc_nam_tai_chinh { get; set; }
-        public int ngay_ket_thuc_nam_tai_chinh { get; set; }
+        public Nullable<int> id_dia_chi_nhan_thong_bao_thue { get; set; }
+        public Nullable<bool> hach_toan_doc_lap { get; set; }
+        public Nullable<bool> bao_cao_tai_chinh_hop_nhat { get; set; }
+        public Nullable<int> thang_bat_dau_nam_tai_chinh { get; set; }
+        public Nullable<int> ngay_bat_dau_nam_tai_chinh { get; set; }
+        public Nullable<int> thang_ket_thuc_nam_tai_chinh { get; set; }
+        public Nullable<int> ngay_ket_thuc_nam_tai_chinh { get; set; }
         public Nullable<System.DateTime> ngay_bat_dau_hoat_dong_kinh_doanh { get; set; }
         public Nullable<int> so_lao_dong_du_kien { get; set; }
     

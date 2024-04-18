@@ -206,7 +206,7 @@ namespace QuanLyDangKyDoanhNghiep
                     txt_username.Text = internal_Account.username;
                     txt_password.Text = internal_Account.password;
                     txt_password_repeat.Text = internal_Account.password;
-                    ckb_islocked.Checked = internal_Account.is_locked;
+                    ckb_islocked.Checked = internal_Account.is_locked.Value;
                 }
                 btn_createsave.Text = "Lưu thay đổi";
                 btn_delete.Enabled = true;

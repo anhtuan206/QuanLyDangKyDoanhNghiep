@@ -86,7 +86,7 @@
             this.btn_luu_tam.Name = "btn_luu_tam";
             this.btn_luu_tam.Size = new System.Drawing.Size(88, 34);
             this.btn_luu_tam.TabIndex = 9;
-            this.btn_luu_tam.Text = "Lưu tạm";
+            this.btn_luu_tam.Text = "Lưu";
             this.btn_luu_tam.UseVisualStyleBackColor = false;
             this.btn_luu_tam.Click += new System.EventHandler(this.btn_luu_tam_Click);
             // 

@@ -25,10 +25,7 @@ namespace QuanLyDangKyDoanhNghiep
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<bao_hiem_xa_hoi> bao_hiem_xa_hoi { get; set; }
-        public virtual DbSet<chuc_danh> chuc_danh { get; set; }
         public virtual DbSet<dan_toc> dan_toc { get; set; }
-        public virtual DbSet<dang_ky_su_dung_hoa_don> dang_ky_su_dung_hoa_don { get; set; }
         public virtual DbSet<doanh_nghiep> doanh_nghiep { get; set; }
         public virtual DbSet<external_account> external_account { get; set; }
         public virtual DbSet<internal_account> internal_account { get; set; }

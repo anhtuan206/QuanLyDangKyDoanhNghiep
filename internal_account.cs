@@ -23,9 +23,9 @@ namespace QuanLyDangKyDoanhNghiep
         public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public System.DateTime create_time { get; set; }
-        public bool is_locked { get; set; }
-        public int id_nhan_vien { get; set; }
+        public Nullable<System.DateTime> create_time { get; set; }
+        public Nullable<bool> is_locked { get; set; }
+        public Nullable<int> id_nhan_vien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<doanh_nghiep> doanh_nghiep { get; set; }

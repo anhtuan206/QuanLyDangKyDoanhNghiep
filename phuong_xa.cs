@@ -22,7 +22,7 @@ namespace QuanLyDangKyDoanhNghiep
     
         public int id { get; set; }
         public string ten_phuong_xa { get; set; }
-        public int id_quan_huyen { get; set; }
+        public Nullable<int> id_quan_huyen { get; set; }
     
         public virtual quan_huyen quan_huyen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

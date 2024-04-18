@@ -44,10 +44,10 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
         {
             if (grid_danh_sach_ho_so_dang_ky.CurrentRow.Index != -1)
             {
-                doanh_Nghiep.id = Convert.ToInt32(grid_danh_sach_ho_so_dang_ky.CurrentRow.Cells["id"].Value);
+                int doanh_nghiep_id = Convert.ToInt32(grid_danh_sach_ho_so_dang_ky.CurrentRow.Cells["id"].Value);
                 using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
                 {
-                    doanh_Nghiep = db.doanh_nghiep.Where(item => item.id == doanh_Nghiep.id).FirstOrDefault();
+                    doanh_Nghiep = db.doanh_nghiep.Where(item => item.id == doanh_nghiep_id).FirstOrDefault();
                 }
                 if (doanh_Nghiep != null)
                 {
@@ -80,26 +80,30 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
 
         private void xoa_nhan_su_doanh_nghiep()
         {
-            using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
-            {
-                List<nhan_su_doanh_nghiep> nhan_Su_Doanh_Nghieps = db.nhan_su_doanh_nghiep.Where(item => item.id_doanh_nghiep == doanh_Nghiep.id).ToList<nhan_su_doanh_nghiep>();
-                foreach (nhan_su_doanh_nghiep item in nhan_Su_Doanh_Nghieps)
-                {
-                    db.nhan_su_doanh_nghiep.Remove(item);
-                }
-                db.SaveChanges();
-            }
+            //using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
+            //{
+            //    List<nhan_su_doanh_nghiep> nhan_Su_Doanh_Nghieps = db.nhan_su_doanh_nghiep.Where(item => item.id_doanh_nghiep == doanh_Nghiep.id).ToList<nhan_su_doanh_nghiep>();
+            //    foreach (nhan_su_doanh_nghiep item in nhan_Su_Doanh_Nghieps)
+            //    {
+            //        db.nhan_su_doanh_nghiep.Remove(item);
+            //        db.SaveChanges();
+            //    }
+            //}
         }
 
         private void xoa_doanh_nghiep()
         {
             using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
             {
-                db.doanh_nghiep.Remove(doanh_Nghiep);
-                db.SaveChanges();
-                grid_danh_sach_ho_so_dang_ky_ds();
-                btn_tiep_tuc_nhap_thong_tin.Enabled = false;
-                btn_xoa_ho_so.Enabled = false;
+                doanh_Nghiep = db.doanh_nghiep.Where(item => item.id == doanh_Nghiep.id).FirstOrDefault();
+                if (doanh_Nghiep!= null)
+                {
+                    db.doanh_nghiep.Remove(doanh_Nghiep);
+                    db.SaveChanges();
+                    grid_danh_sach_ho_so_dang_ky_ds();
+                    btn_tiep_tuc_nhap_thong_tin.Enabled = false;
+                    btn_xoa_ho_so.Enabled = false;
+                }
             }
         }
 
@@ -136,6 +140,24 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm
             }
             if (MessageBox.Show("Bạn muốn xóa hồ sơ đã chọn?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
+                {
+                    doanh_Nghiep = db.doanh_nghiep.Where(item => item.id == doanh_Nghiep.id).FirstOrDefault();
+                    doanh_Nghiep.loai_hinh = null;
+                    doanh_Nghiep.id_dia_chi = null;
+                    doanh_Nghiep.thongtin_diachi = null;
+                    doanh_Nghiep.id_chu_so_huu = null;
+                    doanh_Nghiep.nhan_su_doanh_nghiep = null;
+                    doanh_Nghiep.id_nguoi_dai_dien_phap_luat = null;
+                    doanh_Nghiep.nhan_su_doanh_nghiep1 = null;
+                    doanh_Nghiep.nhan_su_doanh_nghiep2 = null;
+                    doanh_Nghiep.thong_tin_thue = null;
+                    doanh_Nghiep.id_thong_tin_thue = null;
+                    doanh_Nghiep.nganh_nghe_dangky = null;
+                    db.Entry(doanh_Nghiep).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
                 xoa_nganh_nghe_dang_ky();
                 xoa_nhan_su_doanh_nghiep();
                 xoa_dia_chi_doanh_nghiep();

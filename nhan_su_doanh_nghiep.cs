@@ -38,7 +38,6 @@ namespace QuanLyDangKyDoanhNghiep
         public Nullable<int> dia_chi_lien_lac { get; set; }
         public Nullable<int> id_chuc_danh { get; set; }
     
-        public virtual chuc_danh chuc_danh { get; set; }
         public virtual dan_toc dan_toc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<doanh_nghiep> doanh_nghiep { get; set; }

@@ -38,8 +38,6 @@ namespace QuanLyDangKyDoanhNghiep
         public Nullable<bool> is_submitted { get; set; }
         public Nullable<decimal> von_dieu_le { get; set; }
     
-        public virtual bao_hiem_xa_hoi bao_hiem_xa_hoi { get; set; }
-        public virtual dang_ky_su_dung_hoa_don dang_ky_su_dung_hoa_don { get; set; }
         public virtual external_account external_account { get; set; }
         public virtual internal_account internal_account { get; set; }
         public virtual nhan_su_doanh_nghiep nhan_su_doanh_nghiep { get; set; }

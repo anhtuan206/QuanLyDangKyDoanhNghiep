@@ -5,37 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="tuanpa2_QuanLyDangKyDoanhNghiepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="bao_hiem_xa_hoi">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="phuong_thuc_dong_bao_hiem" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="chuc_danh">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ten_chuc_danh" Type="nvarchar" MaxLength="200" Nullable="false" />
-        </EntityType>
         <EntityType Name="dan_toc">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ten_dan_toc" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="id_quoc_tich" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="dang_ky_su_dung_hoa_don">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="tu_in_hoa_don" Type="bit" />
-          <Property Name="hoa_don_dien_tu" Type="bit" />
-          <Property Name="dat_in_hoa_don" Type="bit" />
-          <Property Name="mua_hoa_don" Type="bit" />
+          <Property Name="id_quoc_tich" Type="int" />
         </EntityType>
         <EntityType Name="doanh_nghiep">
           <Key>
@@ -82,11 +58,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="create_time" Type="datetime" Nullable="false" />
-          <Property Name="is_locked" Type="bit" Nullable="false" />
-          <Property Name="id_nhan_vien" Type="int" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="200" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="is_locked" Type="bit" />
+          <Property Name="id_nhan_vien" Type="int" />
         </EntityType>
         <EntityType Name="loai_hinh">
           <Key>
@@ -140,56 +116,56 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ho_ten" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="gioi_tinh" Type="bit" Nullable="false" />
-          <Property Name="ngay_sinh" Type="date" Nullable="false" />
-          <Property Name="so_cccd" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ngay_cap" Type="date" Nullable="false" />
-          <Property Name="noi_cap" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ho_ten" Type="nvarchar" MaxLength="200" />
+          <Property Name="gioi_tinh" Type="bit" />
+          <Property Name="ngay_sinh" Type="date" />
+          <Property Name="so_cccd" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngay_cap" Type="date" />
+          <Property Name="noi_cap" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="phuong_xa">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ten_phuong_xa" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_quan_huyen" Type="int" Nullable="false" />
+          <Property Name="ten_phuong_xa" Type="nvarchar" MaxLength="200" />
+          <Property Name="id_quan_huyen" Type="int" />
         </EntityType>
         <EntityType Name="quan_huyen">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ten_quan_huyen" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_thanh_pho" Type="int" Nullable="false" />
+          <Property Name="ten_quan_huyen" Type="nvarchar" MaxLength="200" />
+          <Property Name="id_thanh_pho" Type="int" />
         </EntityType>
         <EntityType Name="quoc_tich">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ten_quoc_tich" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ten_quoc_tich" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="thanh_pho">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ten_thanh_pho" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_quoc_gia" Type="int" Nullable="false" />
+          <Property Name="ten_thanh_pho" Type="nvarchar" MaxLength="200" />
+          <Property Name="id_quoc_gia" Type="int" />
         </EntityType>
         <EntityType Name="thong_tin_thue">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_dia_chi_nhan_thong_bao_thue" Type="int" Nullable="false" />
-          <Property Name="hach_toan_doc_lap" Type="bit" Nullable="false" />
-          <Property Name="bao_cao_tai_chinh_hop_nhat" Type="bit" Nullable="false" />
-          <Property Name="thang_bat_dau_nam_tai_chinh" Type="int" Nullable="false" />
-          <Property Name="ngay_bat_dau_nam_tai_chinh" Type="int" Nullable="false" />
-          <Property Name="thang_ket_thuc_nam_tai_chinh" Type="int" Nullable="false" />
-          <Property Name="ngay_ket_thuc_nam_tai_chinh" Type="int" Nullable="false" />
+          <Property Name="id_dia_chi_nhan_thong_bao_thue" Type="int" />
+          <Property Name="hach_toan_doc_lap" Type="bit" />
+          <Property Name="bao_cao_tai_chinh_hop_nhat" Type="bit" />
+          <Property Name="thang_bat_dau_nam_tai_chinh" Type="int" />
+          <Property Name="ngay_bat_dau_nam_tai_chinh" Type="int" />
+          <Property Name="thang_ket_thuc_nam_tai_chinh" Type="int" />
+          <Property Name="ngay_ket_thuc_nam_tai_chinh" Type="int" />
           <Property Name="ngay_bat_dau_hoat_dong_kinh_doanh" Type="date" />
           <Property Name="so_lao_dong_du_kien" Type="int" />
         </EntityType>
@@ -257,7 +233,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dan_toc_quoc_tich">
-          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="1" />
+          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="0..1" />
           <End Role="dan_toc" Type="Self.dan_toc" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="quoc_tich">
@@ -265,30 +241,6 @@
             </Principal>
             <Dependent Role="dan_toc">
               <PropertyRef Name="id_quoc_tich" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_doanh_nghiep_bao_hiem_xa_hoi">
-          <End Role="bao_hiem_xa_hoi" Type="Self.bao_hiem_xa_hoi" Multiplicity="0..1" />
-          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bao_hiem_xa_hoi">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="doanh_nghiep">
-              <PropertyRef Name="id_bao_hiem_xa_hoi" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_doanh_nghiep_dang_ky_su_dung_hoa_don">
-          <End Role="dang_ky_su_dung_hoa_don" Type="Self.dang_ky_su_dung_hoa_don" Multiplicity="0..1" />
-          <End Role="doanh_nghiep" Type="Self.doanh_nghiep" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dang_ky_su_dung_hoa_don">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="doanh_nghiep">
-              <PropertyRef Name="id_hoa_don" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -413,7 +365,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_internal_account_nhan_vien">
-          <End Role="nhan_vien" Type="Self.nhan_vien" Multiplicity="1" />
+          <End Role="nhan_vien" Type="Self.nhan_vien" Multiplicity="0..1" />
           <End Role="internal_account" Type="Self.internal_account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="nhan_vien">
@@ -460,20 +412,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_nhan_su_doanh_nghiep_chuc_danh">
-          <End Role="chuc_danh" Type="Self.chuc_danh" Multiplicity="0..1" />
-          <End Role="nhan_su_doanh_nghiep" Type="Self.nhan_su_doanh_nghiep" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="chuc_danh">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="nhan_su_doanh_nghiep">
-              <PropertyRef Name="id_chuc_danh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_phuong_xa_quan_huyen">
-          <End Role="quan_huyen" Type="Self.quan_huyen" Multiplicity="1" />
+          <End Role="quan_huyen" Type="Self.quan_huyen" Multiplicity="0..1" />
           <End Role="phuong_xa" Type="Self.phuong_xa" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="quan_huyen">
@@ -485,7 +425,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_quan_huyen_thanh_pho">
-          <End Role="thanh_pho" Type="Self.thanh_pho" Multiplicity="1" />
+          <End Role="thanh_pho" Type="Self.thanh_pho" Multiplicity="0..1" />
           <End Role="quan_huyen" Type="Self.quan_huyen" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="thanh_pho">
@@ -497,9 +437,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_thanh_pho_quoc_tich">
-          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="quoc_tich" Type="Self.quoc_tich" Multiplicity="0..1" />
           <End Role="thanh_pho" Type="Self.thanh_pho" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="quoc_tich">
@@ -511,7 +449,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_thong_tin_thue_thongtin_diachi">
-          <End Role="thongtin_diachi" Type="Self.thongtin_diachi" Multiplicity="1" />
+          <End Role="thongtin_diachi" Type="Self.thongtin_diachi" Multiplicity="0..1" />
           <End Role="thong_tin_thue" Type="Self.thong_tin_thue" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="thongtin_diachi">
@@ -571,10 +509,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="tuanpa2_QuanLyDangKyDoanhNghiepModelStoreContainer">
-          <EntitySet Name="bao_hiem_xa_hoi" EntityType="Self.bao_hiem_xa_hoi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="chuc_danh" EntityType="Self.chuc_danh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dan_toc" EntityType="Self.dan_toc" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="dang_ky_su_dung_hoa_don" EntityType="Self.dang_ky_su_dung_hoa_don" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="doanh_nghiep" EntityType="Self.doanh_nghiep" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="external_account" EntityType="Self.external_account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="internal_account" EntityType="Self.internal_account" Schema="dbo" store:Type="Tables" />
@@ -608,14 +543,6 @@
           <AssociationSet Name="FK_dan_toc_quoc_tich" Association="Self.FK_dan_toc_quoc_tich">
             <End Role="quoc_tich" EntitySet="quoc_tich" />
             <End Role="dan_toc" EntitySet="dan_toc" />
-          </AssociationSet>
-          <AssociationSet Name="FK_doanh_nghiep_bao_hiem_xa_hoi" Association="Self.FK_doanh_nghiep_bao_hiem_xa_hoi">
-            <End Role="bao_hiem_xa_hoi" EntitySet="bao_hiem_xa_hoi" />
-            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
-          </AssociationSet>
-          <AssociationSet Name="FK_doanh_nghiep_dang_ky_su_dung_hoa_don" Association="Self.FK_doanh_nghiep_dang_ky_su_dung_hoa_don">
-            <End Role="dang_ky_su_dung_hoa_don" EntitySet="dang_ky_su_dung_hoa_don" />
-            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
           </AssociationSet>
           <AssociationSet Name="FK_doanh_nghiep_external_account" Association="Self.FK_doanh_nghiep_external_account">
             <End Role="external_account" EntitySet="external_account" />
@@ -673,10 +600,6 @@
             <End Role="nganh_nghe" EntitySet="nganh_nghe" />
             <End Role="nganh_nghe1" EntitySet="nganh_nghe" />
           </AssociationSet>
-          <AssociationSet Name="FK_nhan_su_doanh_nghiep_chuc_danh" Association="Self.FK_nhan_su_doanh_nghiep_chuc_danh">
-            <End Role="chuc_danh" EntitySet="chuc_danh" />
-            <End Role="nhan_su_doanh_nghiep" EntitySet="nhan_su_doanh_nghiep" />
-          </AssociationSet>
           <AssociationSet Name="FK_phuong_xa_quan_huyen" Association="Self.FK_phuong_xa_quan_huyen">
             <End Role="quan_huyen" EntitySet="quan_huyen" />
             <End Role="phuong_xa" EntitySet="phuong_xa" />
@@ -715,10 +638,7 @@
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyDangKyDoanhNghiepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="QuanLyDangKyDoanhNghiepEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="bao_hiem_xa_hoi" EntityType="QuanLyDangKyDoanhNghiepModel.bao_hiem_xa_hoi" />
-          <EntitySet Name="chuc_danh" EntityType="QuanLyDangKyDoanhNghiepModel.chuc_danh" />
           <EntitySet Name="dan_toc" EntityType="QuanLyDangKyDoanhNghiepModel.dan_toc" />
-          <EntitySet Name="dang_ky_su_dung_hoa_don" EntityType="QuanLyDangKyDoanhNghiepModel.dang_ky_su_dung_hoa_don" />
           <EntitySet Name="doanh_nghiep" EntityType="QuanLyDangKyDoanhNghiepModel.doanh_nghiep" />
           <EntitySet Name="external_account" EntityType="QuanLyDangKyDoanhNghiepModel.external_account" />
           <EntitySet Name="internal_account" EntityType="QuanLyDangKyDoanhNghiepModel.internal_account" />
@@ -733,14 +653,6 @@
           <EntitySet Name="thanh_pho" EntityType="QuanLyDangKyDoanhNghiepModel.thanh_pho" />
           <EntitySet Name="thong_tin_thue" EntityType="QuanLyDangKyDoanhNghiepModel.thong_tin_thue" />
           <EntitySet Name="thongtin_diachi" EntityType="QuanLyDangKyDoanhNghiepModel.thongtin_diachi" />
-          <AssociationSet Name="FK_doanh_nghiep_bao_hiem_xa_hoi" Association="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_bao_hiem_xa_hoi">
-            <End Role="bao_hiem_xa_hoi" EntitySet="bao_hiem_xa_hoi" />
-            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
-          </AssociationSet>
-          <AssociationSet Name="FK_nhan_su_doanh_nghiep_chuc_danh" Association="QuanLyDangKyDoanhNghiepModel.FK_nhan_su_doanh_nghiep_chuc_danh">
-            <End Role="chuc_danh" EntitySet="chuc_danh" />
-            <End Role="nhan_su_doanh_nghiep" EntitySet="nhan_su_doanh_nghiep" />
-          </AssociationSet>
           <AssociationSet Name="FK_chu_so_huu_doanh_nghiep_dan_toc" Association="QuanLyDangKyDoanhNghiepModel.FK_chu_so_huu_doanh_nghiep_dan_toc">
             <End Role="dan_toc" EntitySet="dan_toc" />
             <End Role="nhan_su_doanh_nghiep" EntitySet="nhan_su_doanh_nghiep" />
@@ -752,10 +664,6 @@
           <AssociationSet Name="FK_external_account_dan_toc" Association="QuanLyDangKyDoanhNghiepModel.FK_external_account_dan_toc">
             <End Role="dan_toc" EntitySet="dan_toc" />
             <End Role="external_account" EntitySet="external_account" />
-          </AssociationSet>
-          <AssociationSet Name="FK_doanh_nghiep_dang_ky_su_dung_hoa_don" Association="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_dang_ky_su_dung_hoa_don">
-            <End Role="dang_ky_su_dung_hoa_don" EntitySet="dang_ky_su_dung_hoa_don" />
-            <End Role="doanh_nghiep" EntitySet="doanh_nghiep" />
           </AssociationSet>
           <AssociationSet Name="FK_doanh_nghiep_external_account" Association="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_external_account">
             <End Role="external_account" EntitySet="external_account" />
@@ -854,43 +762,16 @@
             <End Role="thong_tin_thue" EntitySet="thong_tin_thue" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="bao_hiem_xa_hoi">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="phuong_thuc_dong_bao_hiem" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_bao_hiem_xa_hoi" FromRole="bao_hiem_xa_hoi" ToRole="doanh_nghiep" />
-        </EntityType>
-        <EntityType Name="chuc_danh">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_chuc_danh" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="nhan_su_doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_nhan_su_doanh_nghiep_chuc_danh" FromRole="chuc_danh" ToRole="nhan_su_doanh_nghiep" />
-        </EntityType>
         <EntityType Name="dan_toc">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ten_dan_toc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="id_quoc_tich" Type="Int32" Nullable="false" />
+          <Property Name="id_quoc_tich" Type="Int32" />
           <NavigationProperty Name="nhan_su_doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_chu_so_huu_doanh_nghiep_dan_toc" FromRole="dan_toc" ToRole="nhan_su_doanh_nghiep" />
           <NavigationProperty Name="quoc_tich" Relationship="QuanLyDangKyDoanhNghiepModel.FK_dan_toc_quoc_tich" FromRole="dan_toc" ToRole="quoc_tich" />
           <NavigationProperty Name="external_account" Relationship="QuanLyDangKyDoanhNghiepModel.FK_external_account_dan_toc" FromRole="dan_toc" ToRole="external_account" />
-        </EntityType>
-        <EntityType Name="dang_ky_su_dung_hoa_don">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tu_in_hoa_don" Type="Boolean" />
-          <Property Name="hoa_don_dien_tu" Type="Boolean" />
-          <Property Name="dat_in_hoa_don" Type="Boolean" />
-          <Property Name="mua_hoa_don" Type="Boolean" />
-          <NavigationProperty Name="doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_dang_ky_su_dung_hoa_don" FromRole="dang_ky_su_dung_hoa_don" ToRole="doanh_nghiep" />
         </EntityType>
         <EntityType Name="doanh_nghiep">
           <Key>
@@ -913,8 +794,6 @@
           <Property Name="ngay_tao_ho_so" Type="DateTime" Precision="3" />
           <Property Name="is_submitted" Type="Boolean" />
           <Property Name="von_dieu_le" Type="Decimal" Precision="18" Scale="0" />
-          <NavigationProperty Name="bao_hiem_xa_hoi" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_bao_hiem_xa_hoi" FromRole="doanh_nghiep" ToRole="bao_hiem_xa_hoi" />
-          <NavigationProperty Name="dang_ky_su_dung_hoa_don" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_dang_ky_su_dung_hoa_don" FromRole="doanh_nghiep" ToRole="dang_ky_su_dung_hoa_don" />
           <NavigationProperty Name="external_account" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_external_account" FromRole="doanh_nghiep" ToRole="external_account" />
           <NavigationProperty Name="internal_account" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_internal_account" FromRole="doanh_nghiep" ToRole="internal_account" />
           <NavigationProperty Name="nhan_su_doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_nhan_su_doanh_nghiep" FromRole="doanh_nghiep" ToRole="nhan_su_doanh_nghiep" />
@@ -951,11 +830,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="is_locked" Type="Boolean" Nullable="false" />
-          <Property Name="id_nhan_vien" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="is_locked" Type="Boolean" />
+          <Property Name="id_nhan_vien" Type="Int32" />
           <NavigationProperty Name="doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_internal_account" FromRole="internal_account" ToRole="doanh_nghiep" />
           <NavigationProperty Name="nhan_vien" Relationship="QuanLyDangKyDoanhNghiepModel.FK_internal_account_nhan_vien" FromRole="internal_account" ToRole="nhan_vien" />
         </EntityType>
@@ -1011,7 +890,6 @@
           <Property Name="dia_chi_thuong_tru" Type="Int32" />
           <Property Name="dia_chi_lien_lac" Type="Int32" />
           <Property Name="id_chuc_danh" Type="Int32" />
-          <NavigationProperty Name="chuc_danh" Relationship="QuanLyDangKyDoanhNghiepModel.FK_nhan_su_doanh_nghiep_chuc_danh" FromRole="nhan_su_doanh_nghiep" ToRole="chuc_danh" />
           <NavigationProperty Name="dan_toc" Relationship="QuanLyDangKyDoanhNghiepModel.FK_chu_so_huu_doanh_nghiep_dan_toc" FromRole="nhan_su_doanh_nghiep" ToRole="dan_toc" />
           <NavigationProperty Name="doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_nhan_su_doanh_nghiep" FromRole="nhan_su_doanh_nghiep" ToRole="doanh_nghiep" />
           <NavigationProperty Name="doanh_nghiep1" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_nhan_su_doanh_nghiep1" FromRole="nhan_su_doanh_nghiep" ToRole="doanh_nghiep" />
@@ -1025,12 +903,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ho_ten" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="gioi_tinh" Type="Boolean" Nullable="false" />
-          <Property Name="ngay_sinh" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="so_cccd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ngay_cap" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="noi_cap" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ho_ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="gioi_tinh" Type="Boolean" />
+          <Property Name="ngay_sinh" Type="DateTime" Precision="0" />
+          <Property Name="so_cccd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_cap" Type="DateTime" Precision="0" />
+          <Property Name="noi_cap" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="internal_account" Relationship="QuanLyDangKyDoanhNghiepModel.FK_internal_account_nhan_vien" FromRole="nhan_vien" ToRole="internal_account" />
         </EntityType>
         <EntityType Name="phuong_xa">
@@ -1038,8 +916,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_phuong_xa" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="id_quan_huyen" Type="Int32" Nullable="false" />
+          <Property Name="ten_phuong_xa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="id_quan_huyen" Type="Int32" />
           <NavigationProperty Name="quan_huyen" Relationship="QuanLyDangKyDoanhNghiepModel.FK_phuong_xa_quan_huyen" FromRole="phuong_xa" ToRole="quan_huyen" />
           <NavigationProperty Name="thongtin_diachi" Relationship="QuanLyDangKyDoanhNghiepModel.FK_thongtin_diachi_phuong_xa" FromRole="phuong_xa" ToRole="thongtin_diachi" />
         </EntityType>
@@ -1048,8 +926,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_quan_huyen" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="id_thanh_pho" Type="Int32" Nullable="false" />
+          <Property Name="ten_quan_huyen" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="id_thanh_pho" Type="Int32" />
           <NavigationProperty Name="phuong_xa" Relationship="QuanLyDangKyDoanhNghiepModel.FK_phuong_xa_quan_huyen" FromRole="quan_huyen" ToRole="phuong_xa" />
           <NavigationProperty Name="thanh_pho" Relationship="QuanLyDangKyDoanhNghiepModel.FK_quan_huyen_thanh_pho" FromRole="quan_huyen" ToRole="thanh_pho" />
           <NavigationProperty Name="thongtin_diachi" Relationship="QuanLyDangKyDoanhNghiepModel.FK_thongtin_diachi_quan_huyen" FromRole="quan_huyen" ToRole="thongtin_diachi" />
@@ -1059,7 +937,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_quoc_tich" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ten_quoc_tich" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="dan_toc" Relationship="QuanLyDangKyDoanhNghiepModel.FK_dan_toc_quoc_tich" FromRole="quoc_tich" ToRole="dan_toc" />
           <NavigationProperty Name="external_account" Relationship="QuanLyDangKyDoanhNghiepModel.FK_external_account_quoc_tich" FromRole="quoc_tich" ToRole="external_account" />
           <NavigationProperty Name="nhan_su_doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_chu_so_huu_doanh_nghiep_quoc_tich" FromRole="quoc_tich" ToRole="nhan_su_doanh_nghiep" />
@@ -1071,8 +949,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_thanh_pho" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="id_quoc_gia" Type="Int32" Nullable="false" />
+          <Property Name="ten_thanh_pho" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="id_quoc_gia" Type="Int32" />
           <NavigationProperty Name="quan_huyen" Relationship="QuanLyDangKyDoanhNghiepModel.FK_quan_huyen_thanh_pho" FromRole="thanh_pho" ToRole="quan_huyen" />
           <NavigationProperty Name="quoc_tich" Relationship="QuanLyDangKyDoanhNghiepModel.FK_thanh_pho_quoc_tich" FromRole="thanh_pho" ToRole="quoc_tich" />
           <NavigationProperty Name="thongtin_diachi" Relationship="QuanLyDangKyDoanhNghiepModel.FK_thongtin_diachi_thanh_pho" FromRole="thanh_pho" ToRole="thongtin_diachi" />
@@ -1082,13 +960,13 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_dia_chi_nhan_thong_bao_thue" Type="Int32" Nullable="false" />
-          <Property Name="hach_toan_doc_lap" Type="Boolean" Nullable="false" />
-          <Property Name="bao_cao_tai_chinh_hop_nhat" Type="Boolean" Nullable="false" />
-          <Property Name="thang_bat_dau_nam_tai_chinh" Type="Int32" Nullable="false" />
-          <Property Name="ngay_bat_dau_nam_tai_chinh" Type="Int32" Nullable="false" />
-          <Property Name="thang_ket_thuc_nam_tai_chinh" Type="Int32" Nullable="false" />
-          <Property Name="ngay_ket_thuc_nam_tai_chinh" Type="Int32" Nullable="false" />
+          <Property Name="id_dia_chi_nhan_thong_bao_thue" Type="Int32" />
+          <Property Name="hach_toan_doc_lap" Type="Boolean" />
+          <Property Name="bao_cao_tai_chinh_hop_nhat" Type="Boolean" />
+          <Property Name="thang_bat_dau_nam_tai_chinh" Type="Int32" />
+          <Property Name="ngay_bat_dau_nam_tai_chinh" Type="Int32" />
+          <Property Name="thang_ket_thuc_nam_tai_chinh" Type="Int32" />
+          <Property Name="ngay_ket_thuc_nam_tai_chinh" Type="Int32" />
           <Property Name="ngay_bat_dau_hoat_dong_kinh_doanh" Type="DateTime" Precision="0" />
           <Property Name="so_lao_dong_du_kien" Type="Int32" />
           <NavigationProperty Name="doanh_nghiep" Relationship="QuanLyDangKyDoanhNghiepModel.FK_doanh_nghiep_thong_tin_thue" FromRole="thong_tin_thue" ToRole="doanh_nghiep" />
@@ -1117,30 +995,6 @@
           <NavigationProperty Name="thanh_pho" Relationship="QuanLyDangKyDoanhNghiepModel.FK_thongtin_diachi_thanh_pho" FromRole="thongtin_diachi" ToRole="thanh_pho" />
           <NavigationProperty Name="thong_tin_thue" Relationship="QuanLyDangKyDoanhNghiepModel.FK_thong_tin_thue_thongtin_diachi" FromRole="thongtin_diachi" ToRole="thong_tin_thue" />
         </EntityType>
-        <Association Name="FK_doanh_nghiep_bao_hiem_xa_hoi">
-          <End Type="QuanLyDangKyDoanhNghiepModel.bao_hiem_xa_hoi" Role="bao_hiem_xa_hoi" Multiplicity="0..1" />
-          <End Type="QuanLyDangKyDoanhNghiepModel.doanh_nghiep" Role="doanh_nghiep" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bao_hiem_xa_hoi">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="doanh_nghiep">
-              <PropertyRef Name="id_bao_hiem_xa_hoi" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_nhan_su_doanh_nghiep_chuc_danh">
-          <End Type="QuanLyDangKyDoanhNghiepModel.chuc_danh" Role="chuc_danh" Multiplicity="0..1" />
-          <End Type="QuanLyDangKyDoanhNghiepModel.nhan_su_doanh_nghiep" Role="nhan_su_doanh_nghiep" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="chuc_danh">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="nhan_su_doanh_nghiep">
-              <PropertyRef Name="id_chuc_danh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_chu_so_huu_doanh_nghiep_dan_toc">
           <End Type="QuanLyDangKyDoanhNghiepModel.dan_toc" Role="dan_toc" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.nhan_su_doanh_nghiep" Role="nhan_su_doanh_nghiep" Multiplicity="*" />
@@ -1154,7 +1008,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dan_toc_quoc_tich">
-          <End Type="QuanLyDangKyDoanhNghiepModel.quoc_tich" Role="quoc_tich" Multiplicity="1" />
+          <End Type="QuanLyDangKyDoanhNghiepModel.quoc_tich" Role="quoc_tich" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.dan_toc" Role="dan_toc" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="quoc_tich">
@@ -1174,18 +1028,6 @@
             </Principal>
             <Dependent Role="external_account">
               <PropertyRef Name="id_dan_toc" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_doanh_nghiep_dang_ky_su_dung_hoa_don">
-          <End Type="QuanLyDangKyDoanhNghiepModel.dang_ky_su_dung_hoa_don" Role="dang_ky_su_dung_hoa_don" Multiplicity="0..1" />
-          <End Type="QuanLyDangKyDoanhNghiepModel.doanh_nghiep" Role="doanh_nghiep" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dang_ky_su_dung_hoa_don">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="doanh_nghiep">
-              <PropertyRef Name="id_hoa_don" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1310,7 +1152,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_internal_account_nhan_vien">
-          <End Type="QuanLyDangKyDoanhNghiepModel.nhan_vien" Role="nhan_vien" Multiplicity="1" />
+          <End Type="QuanLyDangKyDoanhNghiepModel.nhan_vien" Role="nhan_vien" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.internal_account" Role="internal_account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="nhan_vien">
@@ -1382,7 +1224,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_phuong_xa_quan_huyen">
-          <End Type="QuanLyDangKyDoanhNghiepModel.quan_huyen" Role="quan_huyen" Multiplicity="1" />
+          <End Type="QuanLyDangKyDoanhNghiepModel.quan_huyen" Role="quan_huyen" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.phuong_xa" Role="phuong_xa" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="quan_huyen">
@@ -1406,7 +1248,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_quan_huyen_thanh_pho">
-          <End Type="QuanLyDangKyDoanhNghiepModel.thanh_pho" Role="thanh_pho" Multiplicity="1" />
+          <End Type="QuanLyDangKyDoanhNghiepModel.thanh_pho" Role="thanh_pho" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.quan_huyen" Role="quan_huyen" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="thanh_pho">
@@ -1430,9 +1272,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_thanh_pho_quoc_tich">
-          <End Type="QuanLyDangKyDoanhNghiepModel.quoc_tich" Role="quoc_tich" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Type="QuanLyDangKyDoanhNghiepModel.quoc_tich" Role="quoc_tich" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.thanh_pho" Role="thanh_pho" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="quoc_tich">
@@ -1468,7 +1308,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_thong_tin_thue_thongtin_diachi">
-          <End Type="QuanLyDangKyDoanhNghiepModel.thongtin_diachi" Role="thongtin_diachi" Multiplicity="1" />
+          <End Type="QuanLyDangKyDoanhNghiepModel.thongtin_diachi" Role="thongtin_diachi" Multiplicity="0..1" />
           <End Type="QuanLyDangKyDoanhNghiepModel.thong_tin_thue" Role="thong_tin_thue" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="thongtin_diachi">
@@ -1485,38 +1325,11 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="tuanpa2_QuanLyDangKyDoanhNghiepModelStoreContainer" CdmEntityContainer="QuanLyDangKyDoanhNghiepEntities">
-          <EntitySetMapping Name="bao_hiem_xa_hoi">
-            <EntityTypeMapping TypeName="QuanLyDangKyDoanhNghiepModel.bao_hiem_xa_hoi">
-              <MappingFragment StoreEntitySet="bao_hiem_xa_hoi">
-                <ScalarProperty Name="phuong_thuc_dong_bao_hiem" ColumnName="phuong_thuc_dong_bao_hiem" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="chuc_danh">
-            <EntityTypeMapping TypeName="QuanLyDangKyDoanhNghiepModel.chuc_danh">
-              <MappingFragment StoreEntitySet="chuc_danh">
-                <ScalarProperty Name="ten_chuc_danh" ColumnName="ten_chuc_danh" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="dan_toc">
             <EntityTypeMapping TypeName="QuanLyDangKyDoanhNghiepModel.dan_toc">
               <MappingFragment StoreEntitySet="dan_toc">
                 <ScalarProperty Name="id_quoc_tich" ColumnName="id_quoc_tich" />
                 <ScalarProperty Name="ten_dan_toc" ColumnName="ten_dan_toc" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="dang_ky_su_dung_hoa_don">
-            <EntityTypeMapping TypeName="QuanLyDangKyDoanhNghiepModel.dang_ky_su_dung_hoa_don">
-              <MappingFragment StoreEntitySet="dang_ky_su_dung_hoa_don">
-                <ScalarProperty Name="mua_hoa_don" ColumnName="mua_hoa_don" />
-                <ScalarProperty Name="dat_in_hoa_don" ColumnName="dat_in_hoa_don" />
-                <ScalarProperty Name="hoa_don_dien_tu" ColumnName="hoa_don_dien_tu" />
-                <ScalarProperty Name="tu_in_hoa_don" ColumnName="tu_in_hoa_don" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

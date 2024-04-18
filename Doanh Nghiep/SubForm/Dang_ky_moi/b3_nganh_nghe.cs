@@ -360,6 +360,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
                     //{
                     //    db.nganh_nghe_dangky.Attach(nganh_Nghe_Dangky);
                     //}
+                    nganh_Nghe_Dangky = db.nganh_nghe_dangky.Where(item => item.id == nganh_Nghe_Dangky.id).FirstOrDefault();
                     db.nganh_nghe_dangky.Remove(nganh_Nghe_Dangky);
                     db.SaveChanges();
                     grid_nganh_nghe_dang_ky_ds();

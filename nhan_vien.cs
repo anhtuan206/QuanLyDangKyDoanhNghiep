@@ -22,10 +22,10 @@ namespace QuanLyDangKyDoanhNghiep
     
         public int id { get; set; }
         public string ho_ten { get; set; }
-        public bool gioi_tinh { get; set; }
-        public System.DateTime ngay_sinh { get; set; }
+        public Nullable<bool> gioi_tinh { get; set; }
+        public Nullable<System.DateTime> ngay_sinh { get; set; }
         public string so_cccd { get; set; }
-        public System.DateTime ngay_cap { get; set; }
+        public Nullable<System.DateTime> ngay_cap { get; set; }
         public string noi_cap { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

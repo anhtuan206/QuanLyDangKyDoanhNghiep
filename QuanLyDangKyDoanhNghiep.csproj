@@ -157,15 +157,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bao_hiem_xa_hoi.cs">
-      <DependentUpon>Model_QLDKDN.tt</DependentUpon>
-    </Compile>
-    <Compile Include="chuc_danh.cs">
-      <DependentUpon>Model_QLDKDN.tt</DependentUpon>
-    </Compile>
-    <Compile Include="dang_ky_su_dung_hoa_don.cs">
-      <DependentUpon>Model_QLDKDN.tt</DependentUpon>
-    </Compile>
     <Compile Include="dan_toc.cs">
       <DependentUpon>Model_QLDKDN.tt</DependentUpon>
     </Compile>

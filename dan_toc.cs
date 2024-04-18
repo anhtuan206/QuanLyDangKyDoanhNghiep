@@ -23,7 +23,7 @@ namespace QuanLyDangKyDoanhNghiep
     
         public int id { get; set; }
         public string ten_dan_toc { get; set; }
-        public int id_quoc_tich { get; set; }
+        public Nullable<int> id_quoc_tich { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<nhan_su_doanh_nghiep> nhan_su_doanh_nghiep { get; set; }

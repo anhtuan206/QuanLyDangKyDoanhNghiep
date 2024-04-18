@@ -199,15 +199,15 @@ namespace QuanLyDangKyDoanhNghiep
                 {
                     nhan_Vien = db.nhan_vien.Where(x => x.id == nhan_Vien.id).FirstOrDefault();
                     txt_hoten.Text = nhan_Vien.ho_ten;
-                    if (nhan_Vien.gioi_tinh)
+                    if (nhan_Vien.gioi_tinh == true)
                     {    rdo_nam.Checked = true;
                         rdo_nu.Checked = false;
                     }
                     else
                     { rdo_nam.Checked = false; rdo_nu.Checked = true;}
-                    pck_ngaysinh.Value = nhan_Vien.ngay_sinh;
+                    pck_ngaysinh.Value = nhan_Vien.ngay_sinh.Value;
                     txt_cccd.Text = nhan_Vien.so_cccd;
-                    pck_ngaycap.Value = nhan_Vien.ngay_cap;
+                    pck_ngaycap.Value = nhan_Vien.ngay_cap.Value;
                     txt_noicap.Text = nhan_Vien.noi_cap;
                 }
                 btn_createsave.Text = "Lưu thay đổi";
