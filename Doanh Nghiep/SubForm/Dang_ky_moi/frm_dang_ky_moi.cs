@@ -1,4 +1,5 @@
-﻿using QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm;
+﻿using QuanLyDangKyDoanhNghiep.Doanh_Nghiep.SubForm;
+using QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -369,6 +370,7 @@ namespace QuanLyDangKyDoanhNghiep.Doanh_Nghiep.Dang_ky_moi
             xoa_dia_chi_doanh_nghiep();
             xoa_thong_tin_thue();
             xoa_doanh_nghiep();
+            parentForm_doanhnghiep.OpenChildForm(new frm_danh_sach_ho_so_dang_ky(parentForm_doanhnghiep, parentForm_doanhnghiep.external_Account));
             this.Close();
         }
 

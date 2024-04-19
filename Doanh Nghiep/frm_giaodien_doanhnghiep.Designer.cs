@@ -34,6 +34,7 @@
             this.btn_danh_sach_ho_so_dang_ky = new System.Windows.Forms.Button();
             this.btn_dang_ky_doanh_nghiep = new System.Windows.Forms.Button();
             this.panMainFormBody = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btn_danh_sach_ho_so_dang_ky);
             this.panel2.Controls.Add(this.btn_dang_ky_doanh_nghiep);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -95,6 +97,16 @@
             this.panMainFormBody.Size = new System.Drawing.Size(594, 409);
             this.panMainFormBody.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 383);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Tạo dữ liệu mẫu tự động";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_giaodien_doanhnghiep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Panel panMainFormBody;
         private System.Windows.Forms.Button btn_dang_ky_doanh_nghiep;
         private System.Windows.Forms.Button btn_danh_sach_ho_so_dang_ky;
+        private System.Windows.Forms.Button button1;
     }
 }

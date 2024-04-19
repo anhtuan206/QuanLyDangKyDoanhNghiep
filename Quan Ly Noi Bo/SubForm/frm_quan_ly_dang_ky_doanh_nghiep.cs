@@ -38,7 +38,29 @@ namespace QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm
             {
 
                 grid_danh_sach_ho_so_dang_ky.AutoGenerateColumns = false;
-                grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.Where(item => item.is_submitted==true && item.is_approved==null).ToList<doanh_nghiep>();
+                if (rdo_all.Checked==true)
+                {
+                    grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.Where(item => item.is_submitted==true).ToList<doanh_nghiep>();
+                }
+                else
+                {
+                    if (rdo_approved.Checked==true)
+                    {
+                        grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.Where(item => item.is_submitted == true && item.is_approved == true).ToList<doanh_nghiep>();
+
+                    }
+                    else
+                    {
+                        if (rdo_unapproved.Checked==true) { 
+                            grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.Where(item => item.is_submitted==true && item.is_approved!=true).ToList<doanh_nghiep>();
+                        }
+                        else
+                        {
+                            grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.Where(item => item.is_submitted == true).ToList<doanh_nghiep>();
+                        }
+                    }
+
+                }
                 grid_danh_sach_ho_so_dang_ky.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
         }
@@ -134,7 +156,7 @@ namespace QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm
                 }
                 btn_xem_ho_so.Enabled = true;
                 btn_duyet_ho_so.Enabled = true;
-                btn_xoa_ho_so.Enabled = true;
+                //btn_xoa_ho_so.Enabled = true;
                 btn_khong_duyet_ho_so.Enabled = true;
             }
         }
@@ -149,6 +171,9 @@ namespace QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm
                 db.Entry(doanh_Nghiep).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
+            MessageBox.Show("Đã phê duyệt hồ sơ");
+            grid_danh_sach_ho_so_dang_ky_ds();
+
         }
 
         private void btn_khong_duyet_ho_so_Click(object sender, EventArgs e)
@@ -161,11 +186,51 @@ namespace QuanLyDangKyDoanhNghiep.Quan_Ly_Noi_Bo.SubForm
                 db.Entry(doanh_Nghiep).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
+            MessageBox.Show("Đã từ chối phê duyệt hồ sơ");
+            grid_danh_sach_ho_so_dang_ky_ds();
         }
 
         private void frm_quan_ly_dang_ky_doanh_nghiep_FormClosed(object sender, FormClosedEventArgs e)
         {
             parentForm.Show();
+        }
+
+        private void btn_tim_theo_ma_ho_so_Click(object sender, EventArgs e)
+        {
+            if (txt_ma_ho_so.Text.Trim().Length <= 0)
+            {
+                return;
+            }
+            if (int.TryParse(txt_ma_ho_so.Text.Trim(), out int ma_ho_so) == true) { 
+                using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
+                {
+
+                    grid_danh_sach_ho_so_dang_ky.AutoGenerateColumns = false;
+                    grid_danh_sach_ho_so_dang_ky.DataSource = db.doanh_nghiep.Where(item => item.id == ma_ho_so && item.is_submitted==true).ToList<doanh_nghiep>();
+                    grid_danh_sach_ho_so_dang_ky.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã hồ sơ không hợp lệ");
+            }
+        }
+
+        private void rdo_all_CheckedChanged(object sender, EventArgs e)
+        {
+            grid_danh_sach_ho_so_dang_ky_ds();
+        }
+
+        private void rdo_approved_CheckedChanged(object sender, EventArgs e)
+        {
+            grid_danh_sach_ho_so_dang_ky_ds();
+
+        }
+
+        private void rdo_unapproved_CheckedChanged(object sender, EventArgs e)
+        {
+            grid_danh_sach_ho_so_dang_ky_ds();
+
         }
     }
 }

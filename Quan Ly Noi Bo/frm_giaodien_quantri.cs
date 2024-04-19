@@ -47,5 +47,21 @@ namespace QuanLyDangKyDoanhNghiep
             frm_quanly_taikhoan_doanhnghiep frm_Quanly_Taikhoan_Doanhnghiep = new frm_quanly_taikhoan_doanhnghiep(this,internal_Account);
             frm_Quanly_Taikhoan_Doanhnghiep.Show();
         }
+
+        void count_ho_so()
+        {
+            using (QuanLyDangKyDoanhNghiepEntities db = new QuanLyDangKyDoanhNghiepEntities())
+            {
+                List<doanh_nghiep> ho_so_da_duyet = db.doanh_nghiep.Where(item => item.is_approved==true).ToList();
+                List<doanh_nghiep> ho_so_chua_duyet = db.doanh_nghiep.Where(item => item.is_approved != true).ToList();
+                lbl_so_ho_so_cho_duyet.Text = ho_so_chua_duyet.Count().ToString();
+                lbl_so_hs_da_duyet.Text = ho_so_da_duyet.Count().ToString();
+            }
+        }
+
+        private void frm_giaodien_quantri_Load(object sender, EventArgs e)
+        {
+            count_ho_so();
+        }
     }
 }

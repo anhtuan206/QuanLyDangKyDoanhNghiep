@@ -169,6 +169,7 @@
             this.Name = "frm_danh_sach_ho_so_dang_ky";
             this.Text = "frm_danh_sach_ho_so_dang_ky";
             this.Load += new System.EventHandler(this.frm_danh_sach_ho_so_dang_ky_Load);
+            this.Shown += new System.EventHandler(this.frm_danh_sach_ho_so_dang_ky_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
